@@ -1,7 +1,7 @@
 # Bar Sberro
 ### Software & Computer Science Student
 
-A final-year Computer Science student at HIT, with a deep passion for cybersecurity and building robust, efficient tools from the ground up.
+A final-year Computer Science student at HIT, with a deep passion for AI, algorithem,cybersecurity and building robust, efficient tools from the ground up.
 
 ---
 
@@ -15,10 +15,8 @@ I am always looking to learn and take on new challenges in the tech world.
 
 ## 🛠️ Skills
 
-* **Languages:** Python, Java, C++, C#, JavaScript, HTML, CSS, SQL
+* **Languages:** Python, Java, C,C++, SQL
 * **Databases:** MySQL, No-SQL
-* **Frameworks & Libraries:** Scapy, Rich, Pandas, React
-* **Platforms & Tools:** Linux, Git, GitHub, VirtualBox, Wireshark
 
 ---
 
