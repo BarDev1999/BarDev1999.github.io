@@ -1,23 +1,30 @@
-html { 
-  scroll-behavior: smooth; 
+html {
+    scroll-behavior: smooth;
 }
 
-body { 
-  padding-top: 70px; 
+body {
+    padding-top: 70px;
 }
 
-.hero { 
-  min-height: 60vh; 
+.hero {
+    min-height: 60vh;
 }
 
-.hero-img { 
-  max-width: 260px; 
+.hero-img {
+    max-width: 260px;
 }
 
-.tags .badge { 
-  margin: 0 4px 6px; 
+.tags .badge {
+    margin: 0 4px 6px;
 }
 
-a { 
-  text-decoration: none; 
+a {
+    text-decoration: none;
+}
+
+/* Creates a uniform size for all project card images */
+.project-card-image {
+    height: 200px !important; /* Forces the height to be 200px */
+    width: 100%;
+    object-fit: cover !important; /* Forces the image to cover the area without distortion */
 }
