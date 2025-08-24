@@ -1,13 +1,14 @@
+// Bootstrap form validation
 (() => {
   'use strict';
   const forms = document.querySelectorAll('.needs-validation');
   Array.from(forms).forEach(form => {
-    form.addEventListener('submit', evt => {
+    form.addEventListener('submit', event => {
       if (!form.checkValidity()) {
-        evt.preventDefault();
-        evt.stopPropagation();
+        event.preventDefault();
+        event.stopPropagation();
       }
       form.classList.add('was-validated');
-    });
+    }, false);
   });
 })();
