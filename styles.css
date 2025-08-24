@@ -1,7 +1,23 @@
-html { scroll-behavior: smooth; }
-body { padding-top: 72px; }
-.hero { min-height: 60vh; }
-.hero-img { max-width: 260px; }
-.tags .badge { margin: 0 4px 6px; }
-a { text-decoration: none; }
-.card-img-top { object-fit: cover; height: 170px; }
+html { 
+  scroll-behavior: smooth; 
+}
+
+body { 
+  padding-top: 70px; 
+}
+
+.hero { 
+  min-height: 60vh; 
+}
+
+.hero-img { 
+  max-width: 260px; 
+}
+
+.tags .badge { 
+  margin: 0 4px 6px; 
+}
+
+a { 
+  text-decoration: none; 
+}
