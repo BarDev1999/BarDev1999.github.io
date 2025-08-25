@@ -1,34 +1,215 @@
-html { 
-  scroll-behavior: smooth; 
+/* General Body & Font Styles */
+body {
+    font-family: 'Heebo', sans-serif;
+    color: #2D2D2D;
+    margin: 0;
+    padding-top: 80px; /* Space for the fixed navbar */
 }
 
-body { 
-  padding-top: 70px; 
+.container {
+    max-width: 1172px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.hero { 
-  min-height: 60vh; 
+h1, h2, h3 {
+    font-weight: 700;
 }
 
-.hero-img {
-  max-width: 350px;
-  height: 350px; /* To ensure a perfect circle, height and max-width should be the same */
-  border-radius: 50%; /* This makes the image a circle */
-  object-fit: cover; /* This ensures the image fills the circle without distortion */
-  overflow: hidden;   /* This hides parts that stick out of the circle */
+h2 {
+    font-size: 41px;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.tags .badge { 
-  margin: 0 4px 6px; 
+section {
+    padding: 80px 0;
 }
 
-a { 
-  text-decoration: none; 
+/* Navbar */
+.navbar {
+    background: white;
+    box-shadow: 0px 2px 17px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Creates a uniform size for all project card images */
-.project-card-image {
-  height: 200px !important; /* Forces the height */
-  width: 100% !important;   /* Changed from 150% to correctly fit the card */
-  object-fit: cover !important; /* Forces the image to cover the area */
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.nav-brand {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2D2D2D;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2D2D2D;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+/* Hero Section */
+.hero-section {
+    background: #EAF5FF;
+    padding: 150px 0;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    max-width: 630px;
+}
+
+.hero-text h1 {
+    font-size: 62px;
+}
+
+.hero-text p {
+    font-size: 27px;
+    margin: 14px 0 30px 0;
+}
+
+.btn {
+    padding: 10px 16px;
+    background: #3D79DB;
+    color: white;
+    border-radius: 16px;
+    text-decoration: none;
+    font-size: 23px;
+    border: none;
+    cursor: pointer;
+}
+
+/* About Section & Skills */
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 45px;
+    flex-wrap: wrap;
+}
+
+.skills-category {
+    text-align: center;
+}
+
+.skills-category h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tag-green {
+    background: #BFF3D1;
+    color: #225534;
+    padding: 5px 12px;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.tag-blue {
+    background: #BFD7F3;
+    color: #222355;
+    padding: 5px 12px;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+/* Projects Section */
+.projects-section {
+    background: #EAF5FF;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0px 1px 4.5px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card img {
+    width: 100%;
+    height: 182px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card-content p {
+    font-size: 16px;
+    flex-grow: 1;
+    margin: 7px 0 18px 0;
+}
+
+.btn-outline {
+    padding: 6px 12px;
+    border: 1.6px solid #3D79DB;
+    border-radius: 16px;
+    color: #3D79DB;
+    font-size: 19px;
+    font-weight: 500;
+    text-decoration: none;
+    align-self: flex-start;
+}
+
+/* Contact & Footer */
+.contact-section {
+    text-align: center;
+}
+
+.footer {
+    background: #EAF5FF;
+    padding: 29px 0;
+    text-align: center;
+    font-size: 15px;
 }
