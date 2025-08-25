@@ -12,12 +12,13 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#home">Bar Sberro</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div id="nav" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
@@ -29,13 +30,14 @@
   </div>
 </nav>
 
-<header id="home" class="py-5 bg-light hero">
+<!-- HERO (תכלת) -->
+<header id="home" class="py-5 bg-alt hero">
   <div class="container py-5">
     <div class="row align-items-center gy-4">
       <div class="col-lg-7">
         <h1 class="display-5 fw-bold">Computer Science Student</h1>
-        <p class="lead mb-4"> Cybersecurity Enthusiast | Stock Market Analyst | Ai driven </p>
-        <a href="#contact" class="btn btn-primary btn-lg">Get in Touch</a>
+        <p class="lead mb-4"> Python Developer | Cybersecurity Enthusiast | Network Analysis </p>
+        <a href="#contact" class="btn btn-primary btn-lg">Get In Touch</a>
       </div>
       <div class="col-lg-5 text-center">
         <img src="assets/meblue.png" class="rounded-circle img-fluid hero-img" alt="Bar Sberro's profile picture">
@@ -44,7 +46,8 @@
   </div>
 </header>
 
-<section id="about" class="py-5">
+<!-- ABOUT (לבן) -->
+<section id="about" class="py-5 bg-white">
   <div class="container">
     <h2 class="mb-4">About Me</h2>
     <p>
@@ -54,74 +57,123 @@
       <div class="col-md-6">
         <h5 class="mb-2">Languages</h5>
         <div class="tags">
-          <span class="badge rounded-pill bg-secondary">Python</span>
-          <span class="badge rounded-pill bg-secondary">Java</span>
-          <span class="badge rounded-pill bg-secondary">C++</span>
-          <span class="badge rounded-pill bg-secondary">C</span>
-          <span class="badge rounded-pill bg-secondary">SQL</span>
+          <span class="badge python">Python</span>
+          <span class="badge java">Java</span>
+          <span class="badge cpp">C++</span>
+          <span class="badge c">C</span>
+          <span class="badge sql">SQL</span>
         </div>
       </div>
       <div class="col-md-6">
         <h5 class="mb-2">Tools & Libraries</h5>
         <div class="tags">
-          <span class="badge rounded-pill bg-secondary">Linux</span>
-          <span class="badge rounded-pill bg-secondary">Git & GitHub</span>
-          <span class="badge rounded-pill bg-secondary">Scapy</span>
-          <span class="badge rounded-pill bg-secondary">Rich</span>
-          <span class="badge rounded-pill bg-secondary">Wireshark</span>
+          <span class="badge linux">Linux</span>
+          <span class="badge git">Git</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="projects" class="py-5 bg-light">
+<!-- PROJECTS (תכלת) -->
+<section id="projects" class="py-5 bg-alt">
   <div class="container">
-    <h2 class="mb-4">My Projects</h2>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm">
-          <img src="assets/proj1.png" class="card-img-top project-card-image" alt="Network IDS Project">
-          <div class="card-body">
-            <h5 class="card-title">SniffGuard</h5>
-            <p class="card-text">A real-time Intrusion Detection System built with Python and Scapy, featuring a live CLI dashboard, alert logging, and PCAP evidence capture for forensic analysis.</p>
-            <a class="btn btn-outline-primary" href="https://github.com/BarDev1999/SniffGuard" target="_blank" rel="noopener">View Project</a>
+    <h2 class="mb-1">Projects</h2>
+
+    <ul class="nav project-switch nav-pills justify-content-start gap-2" id="projectsTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="personal-tab" data-bs-toggle="tab" data-bs-target="#personal"
+                type="button" role="tab" aria-controls="personal" aria-selected="true">
+          <i class="bi bi-person-circle me-2"></i> Personal
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="team-tab" data-bs-toggle="tab" data-bs-target="#team"
+                type="button" role="tab" aria-controls="team" aria-selected="false">
+          <i class="bi bi-people-fill me-2"></i> Team
+        </button>
+      </li>
+    </ul>
+
+    <div class="tab-content mt-4" id="projectsTabContent">
+      <!-- PERSONAL -->
+      <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+        <div class="row g-4">
+          <!-- Project 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/proj1.png" class="card-img-top project-card-image" alt="Network IDS Project">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">SniffGuard</h5>
+                <p class="card-text">
+                  A real-time Intrusion Detection System built with Python and Scapy, featuring a live CLI dashboard, alert logging, and PCAP evidence capture for forensic analysis.
+                </p>
+                <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/SniffGuard" target="_blank" rel="noopener">View Project</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/proj2.png" class="card-img-top project-card-image" alt="Wine Classification Machine Learning Project">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Wine Classification using Random Forest</h5>
+                <p class="card-text">
+                  This project focuses on classifying different types of wine based on various chemical properties using supervised machine learning.
+                  The final model is based on the Random Forest algorithm and achieves high accuracy and F1 score.
+                </p>
+                <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/supervised_learning_flow-wine" target="_blank" rel="noopener">View Project</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm">
-          <img src="assets/proj2.png" class="card-img-top project-card-image" alt="Project 2">
-          <div class="card-body">
-            <h5 class="card-title">Wine Classification using Random Forest</h5>
-            <p class="card-text">This project focuses on classifying different types of wine based on various chemical properties using supervised machine learning.
-The final model is based on the Random Forest algorithm and achieves high accuracy and F1 score</p>
-            <a class="btn btn-outline-primary" href="https://github.com/BarDev1999/supervised_learning_flow-wine" target="_blank" rel="noopener">View Project</a>
+
+      <!-- TEAM -->
+      <div class="tab-pane fade" id="team" role="tabpanel" aria-labelledby="team-tab">
+        <div class="row g-4">
+          <!-- Team Project: Python-based TCP chat system -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <img src="assets/teamtcpchat.png" class="card-img-top project-card-image" alt="Python-based TCP chat system">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Python-based TCP chat system</h5>
+                <p class="card-text">
+                  A Python-based TCP chat system with client–server architecture, supporting unique usernames and private (direct) messages.
+                </p>
+                <a class="btn btn-outline-primary mt-auto" href="https://github.com/ArbelKoren10/tcp-chat-system" rel="noopener">View Project</a>
+              </div>
+            </div>
           </div>
+          <!-- More team cards can go here -->
         </div>
       </div>
+    </div>
+  </div>
 </section>
 
-<section id="contact" class="py-5">
+<!-- CONTACT (לבן) -->
+<section id="contact" class="py-5 bg-white">
   <div class="container">
     <h2 class="mb-4">Get In Touch</h2>
     <div class="row g-4">
       <div class="col-lg-8">
-<form action="https://formspree.io/f/mgvlwlao" method="POST" class="needs-validation" novalidate>
-  <div class="mb-3">
-    <label class="form-label">Name</label>
-    <input type="text" name="name" class="form-control" required>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Email</label>
-    <input type="email" name="email" class="form-control" required>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Message</label>
-    <textarea name="message" class="form-control" rows="4" required></textarea>
-  </div>
-  <button class="btn btn-primary">Send</button>
-</form>
+        <form action="https://formspree.io/f/mgvlwlao" method="POST" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea name="message" class="form-control" rows="4" required></textarea>
+          </div>
+          <input type="hidden" name="_captcha" value="false">
+          <button class="btn btn-primary">Send</button>
+        </form>
       </div>
       <div class="col-lg-4">
         <ul class="list-unstyled">
