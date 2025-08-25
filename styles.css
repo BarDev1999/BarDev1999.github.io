@@ -69,9 +69,8 @@ a:hover { color:var(--link); }
 .project-card-image {
   height: 200px;
   width: 100%;
-  object-fit: contain;   /* מציג את כל התמונה */
-  object-position: center; /* מרכז אותה */
-  background-color: #fff; /* צבע רקע מאחורי */
+  object-fit: cover;
+  object-position: center center; /* מרכז גם אופקית וגם אנכית */
 }
 
 /* ===== כפתורים ===== */
