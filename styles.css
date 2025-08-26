@@ -1,124 +1,134 @@
 /* ===== בסיס ומשתנים ===== */
-:root{
+:root {
   --bg:#ffffff; --text:#212529; --muted:#6c757d;
   --card-bg:#ffffff; --card-border:#e9ecef;
   --primary:#0d6efd; --link:#0d6efd; --link-hover:#0b5ed7;
   --shadow:0 8px 24px rgba(0,0,0,.08);
 }
 
-html{ scroll-behavior:smooth; }
-body{
+html { scroll-behavior:smooth; }
+body {
   background:var(--bg); color:var(--text); padding-top:70px;
   -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
 }
-img{ display:block; max-width:100%; height:auto; }
-
-a{ 
-  color:var(--link); 
-  text-decoration:none; 
-  transition:color .2s ease, opacity .2s ease, transform .2s ease; 
+img { display:block; max-width:100%; height:auto; }
+a { 
+  color:var(--link); text-decoration:none; 
+  transition:color .2s, opacity .2s, transform .2s; 
 }
-/* לינקים רגילים – לא משתנים ב-hover */
-a:hover { color:var(--link); }
+a:hover { color:var(--link-hover); }
 
 /* ===== נביגציה ===== */
-.navbar{ transition:box-shadow .2s, background-color .2s; }
-.navbar.bg-white{ background-color:var(--bg) !important; }
-.navbar .navbar-brand, .navbar .nav-link{ color:var(--text); }
-.navbar .nav-link:hover{ opacity:.8; }
-.navbar .navbar-toggler{ border:1px solid var(--card-border); }
+.navbar { transition:box-shadow .2s, background-color .2s; }
+.navbar.bg-white { background-color:var(--bg) !important; }
+.navbar .navbar-brand, .navbar .nav-link { color:var(--text); }
+.navbar .nav-link:hover { opacity:.8; }
+.navbar .navbar-toggler { border:1px solid var(--card-border); }
 
 /* ===== Hero ===== */
-.hero{ min-height:60vh; display:flex; align-items:center; }
-.hero .lead{ color:var(--muted); }
-.hero-img{
-  max-width:350px; width:100%; height:350px; border-radius:50%;
-  object-fit:cover; overflow:hidden; box-shadow:var(--shadow);
-  transition:transform .35s;
+.hero { min-height:60vh; display:flex; align-items:center; }
+.hero .lead { color:var(--muted); }
+
+/* תמונת פרופיל (meblue) — רספונסיבי */
+.hero-img {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1/1;       /* שומר על ריבוע */
+  border-radius: 50%;      /* עיגול */
+  object-fit: cover;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .35s;
 }
-.hero-img:hover{ transform:scale(1.02); }
+.hero-img:hover { transform:scale(1.02); }
+
+/* מובייל */
+@media (max-width: 576px) {
+  .hero-img { max-width: 200px; }
+}
 
 /* ===== תגיות ===== */
-.tags .badge{
+.tags .badge {
   margin:0 4px 6px; padding:.45em .9em; font-size:.85rem; font-weight:600;
   border-radius:9999px; border:none; line-height:1;
+  transition:filter .15s, transform .15s;
 }
+.tags .badge:hover { filter:brightness(0.95); transform:translateY(-1px); }
 
 /* שפות – ירוק בהיר */
 .tags .badge.python,
 .tags .badge.java,
 .tags .badge.cpp,
 .tags .badge.c,
-.tags .badge.sql{
+.tags .badge.sql {
   background:#d1fae5; color:#065f46;
 }
 
 /* כלים – כחול כהה */
 .tags .badge.linux,
-.tags .badge.git{
+.tags .badge.git {
   background:#1e3a8a; color:#e6f0ff;
 }
 
 /* ===== כרטיסים / פרויקטים ===== */
-.card{
+.card {
   background:var(--card-bg); border:1px solid var(--card-border);
   box-shadow:var(--shadow);
   transition:transform .25s, box-shadow .25s, border-color .25s;
 }
-.card:hover{ transform:translateY(-4px); box-shadow:0 14px 40px rgba(0,0,0,.12); }
+.card:hover { transform:translateY(-4px); box-shadow:0 14px 40px rgba(0,0,0,.12); }
+
 .project-card-image {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  object-position: center center; /* מרכז גם אופקית וגם אנכית */
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  object-position:center;
+}
+@media (max-width:576px){
+  .project-card-image { aspect-ratio:4/3; }
 }
 
 /* ===== כפתורים ===== */
-.btn{ transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease; }
-.btn:hover{ transform:translateY(-2px); }
-.btn-primary{ background:var(--primary); border:none;
-  box-shadow:0 6px 18px color-mix(in srgb, var(--primary) 35%, transparent); }
-.btn-primary:hover{ filter:brightness(1.02); }
+.btn { transition:transform .18s, box-shadow .18s, opacity .18s; }
+.btn:hover { transform:translateY(-2px); }
+.btn-primary {
+  background:var(--primary); border:none;
+  box-shadow:0 6px 18px color-mix(in srgb, var(--primary) 35%, transparent);
+}
+.btn-primary:hover { filter:brightness(1.02); }
 
-/* ===== Tabs (Personal / Team) ===== */
-.project-switch .nav-link{
+/* ===== טפסים ===== */
+.form-label { font-weight:600; }
+.form-control { background:var(--bg); color:var(--text); border:1px solid var(--card-border); }
+.form-control:focus {
+  border-color:var(--primary);
+  box-shadow:0 0 0 .2rem color-mix(in srgb, var(--primary) 25%, transparent);
+}
+.was-validated .form-control:invalid, .form-control.is-invalid { border-color:#dc3545; }
+.was-validated .form-control:valid, .form-control.is-valid { border-color:#20c997; }
+
+/* ===== מצבים כלליים ===== */
+.bg-light { background-color: color-mix(in srgb, var(--bg) 92%, #EAF5FF) !important; } /* תכלת עדין */
+.border-top { border-top:1px solid var(--card-border) !important; }
+footer { background:var(--bg); color:var(--muted); }
+
+/* ===== טאבים (Projects Personal/Team) ===== */
+.project-switch .nav-link {
   display:flex; align-items:center; gap:.5rem;
   padding:.6rem 1rem; border-radius:12px; font-weight:600;
   background:#f1f5ff; color:#0b3d91; border:1px solid #dbe4ff;
-  transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s;
 }
-.project-switch .nav-link:hover{
+.project-switch .nav-link:hover {
   transform:translateY(-1px);
   box-shadow:0 6px 18px rgba(11,61,145,.12);
 }
-.project-switch .nav-link.active{
+.project-switch .nav-link.active {
   background:#0d6efd; color:#fff; border-color:#0d6efd;
   box-shadow:0 6px 18px rgba(13,110,253,.28);
 }
 
-/* ===== אייקוני LinkedIn ו-GitHub ===== */
-.d-flex.gap-3 a{
-  transition: transform .2s ease, opacity .2s ease;
-}
-.d-flex.gap-3 a:hover{
-  opacity:.7;
-  transform:scale(1.1);
-}
-
-/* ===== טפסים ===== */
-.form-label{ font-weight:600; }
-.form-control{ background:var(--bg); color:var(--text); border:1px solid var(--card-border); }
-.form-control:focus{ border-color:var(--primary);
-  box-shadow:0 0 0 .2rem color-mix(in srgb, var(--primary) 25%, transparent); }
-.was-validated .form-control:invalid, .form-control.is-invalid{ border-color:#dc3545; }
-.was-validated .form-control:valid, .form-control.is-valid{ border-color:#20c997; }
-
-/* ===== מצבים כלליים ===== */
-.bg-light{ background-color:#fff !important; }
-.bg-alt{ background-color:#EAF5FF !important; }
-.border-top{ border-top:1px solid var(--card-border) !important; }
-footer{ background:var(--bg); color:var(--muted); }
-
 /* ===== רספונסיביות ===== */
-@media (max-width:992px){ .hero-img{ height:280px; } }
+@media (max-width:992px){ .hero-img{ height:auto; } }
 @media (max-width:576px){ .hero{ min-height:50vh; } .display-5{ font-size:2rem; } }
