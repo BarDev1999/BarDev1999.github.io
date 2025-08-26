@@ -30,29 +30,28 @@
   </div>
 </nav>
 
-<!-- HERO (תכלת) -->
-<header id="home" class="py-5 bg-alt hero">
+<header id="home" class="py-5 hero">
   <div class="container py-5">
     <div class="row align-items-center gy-4">
       <div class="col-lg-7">
         <h1 class="display-5 fw-bold">Computer Science Student</h1>
         <p class="lead mb-4"> Cybersecurity Enthusiast | Stock Market Analyst | Ai Driven </p>
-        <a href="#contact" class="btn btn-primary btn-lg">Get In Touch</a>
+        <a href="#contact" class="btn btn-primary btn-lg">Get in Touch</a>
       </div>
       <div class="col-lg-5 text-center">
-        <img src="assets/meblue.png" class="rounded-circle img-fluid hero-img" alt="Bar Sberro's profile picture">
+        <!-- ✅ בלי rounded-circle -->
+        <img src="assets/meblue.png" class="img-fluid hero-img" alt="Bar Sberro's profile picture">
       </div>
     </div>
   </div>
 </header>
 
-<!-- ABOUT (לבן) -->
-<section id="about" class="py-5 bg-white">
+<section id="about" class="py-5">
   <div class="container">
     <h2 class="mb-4">About Me</h2>
     <p>
-Second-year Computer Science student at the Holon Institute of Technology (HIT), with a strong foundation in core concepts such as data structures, algorithms, and object-oriented programming. Skilled in C, C++, Python, Java, and SQL, and proficient in working with Linux environments. Passionate about cybersecurity and machine learning, with hands-on experience in designing and developing independent projects that showcase strong problem-solving and software development skills.
-Eager to contribute expertise to an innovative tech team while remaining dedicated to continuous learning and professional growth.    </p>
+      I am a final-year Computer Science student at HIT with a strong passion for network security and building robust, efficient tools. My academic journey has given me a deep understanding of algorithms, data structures, and object-oriented programming. I am experienced in working both independently and as part of a team to solve complex problems.
+    </p>
     <div class="row g-4 mt-2">
       <div class="col-md-6">
         <h5 class="mb-2">Languages</h5>
@@ -69,17 +68,14 @@ Eager to contribute expertise to an innovative tech team while remaining dedicat
         <div class="tags">
           <span class="badge linux">Linux</span>
           <span class="badge git">Git</span>
-          <span class="badge linux">Scapy</span>
-          <span class="badge linux">Scikit-learn</span>
-          <span class="badge linux">Pandas & NumPy</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS (תכלת) -->
-<section id="projects" class="py-5 bg-alt">
+<!-- Projects with Tabs -->
+<section id="projects" class="py-5 bg-light">
   <div class="container">
     <h2 class="mb-1">Projects</h2>
 
@@ -98,6 +94,7 @@ Eager to contribute expertise to an innovative tech team while remaining dedicat
       </li>
     </ul>
 
+    <!-- Tab panes -->
     <div class="tab-content mt-4" id="projectsTabContent">
       <!-- PERSONAL -->
       <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
@@ -115,6 +112,7 @@ Eager to contribute expertise to an innovative tech team while remaining dedicat
               </div>
             </div>
           </div>
+
           <!-- Project 2 -->
           <div class="col-md-6 col-lg-4">
             <div class="card h-100 shadow-sm">
@@ -144,19 +142,18 @@ Eager to contribute expertise to an innovative tech team while remaining dedicat
                 <p class="card-text">
                   A Python-based TCP chat system with client–server architecture, supporting unique usernames and private (direct) messages.
                 </p>
-                <a class="btn btn-outline-primary mt-auto" href="https://github.com/ArbelKoren10/tcp-chat-system" rel="noopener">View Project</a>
+                <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999" target="_blank" rel="noopener">View Project</a>
               </div>
             </div>
           </div>
-          <!-- More team cards can go here -->
+          <!-- אפשר להוסיף כאן כרטיסים נוספים בעתיד -->
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT (לבן) -->
-<section id="contact" class="py-5 bg-white">
+<section id="contact" class="py-5">
   <div class="container">
     <h2 class="mb-4">Get In Touch</h2>
     <div class="row g-4">
@@ -189,8 +186,8 @@ Eager to contribute expertise to an innovative tech team while remaining dedicat
           <a href="https://github.com/BarDev1999" aria-label="GitHub"><i class="bi bi-github"></i></a>
         </div>
       </div>
-    </div>
-  </div>
+    </div> <!-- row -->
+  </div> <!-- container -->
 </section>
 
 <footer class="py-4 bg-white border-top">
