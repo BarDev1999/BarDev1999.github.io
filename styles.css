@@ -23,22 +23,22 @@ a:hover{ color:var(--link-hover); }
 .navbar .navbar-toggler{ border:1px solid var(--card-border); }
 
 /* ===== Hero ===== */
-.hero{ 
+.hero { 
   min-height:60vh; 
   display:flex; 
   align-items:center; 
+  background-color:#EAF5FF; /* זה הרקע הכחול העדין */
 }
-.hero .lead{ color:var(--muted); }
 
 .hero-img{
   width: 100%;
-  max-width: 350px;     /* גודל מקסימלי בדסקטופ */
-  height: auto;         /* שומר על פרופורציות */
-  object-fit: contain;  /* מציג את כל התמונה (כולל הקו הכחול) */
+  max-width: 350px;
+  height: auto;
+  object-fit: contain;   /* שומר את התמונה כמו שהיא */
   box-shadow: var(--shadow);
   transition: transform .35s;
 }
-.hero-img:hover{ transform:scale(1.02); }
+.hero-img:hover{ transform: scale(1.02); }
 
 /* מובייל – קצת קטן יותר */
 @media (max-width: 576px) {
