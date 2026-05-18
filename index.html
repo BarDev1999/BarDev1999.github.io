@@ -162,118 +162,99 @@
 <!-- PROJECTS -->
 <section id="projects" class="py-5 bg-white">
   <div class="container">
-    <h2 class="mb-1">Projects</h2>
+    <h2 class="mb-4">Projects</h2>
+    <div class="row g-4">
 
-    <ul class="nav project-switch nav-pills justify-content-start gap-2 mt-3" id="projectsTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="personal-tab" data-bs-toggle="tab" data-bs-target="#personal"
-                type="button" role="tab" aria-controls="personal" aria-selected="true">
-          <i class="bi bi-person-circle me-2"></i> Personal
-        </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="team-tab" data-bs-toggle="tab" data-bs-target="#team"
-                type="button" role="tab" aria-controls="team" aria-selected="false">
-          <i class="bi bi-people-fill me-2"></i> Team
-        </button>
-      </li>
-    </ul>
-
-    <div class="tab-content mt-4" id="projectsTabContent">
-      <!-- PERSONAL -->
-      <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
-        <div class="row g-4">
-
-          <!-- SniffGuard -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
-              <img src="assets/proj1.png" class="card-img-top project-card-image" alt="SniffGuard IDS">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">SniffGuard</h5>
-                <p class="card-text">
-                  Real-time IDS detecting 4 stealth scan types (SYN, FIN, NULL, XMAS) using Python &amp; Scapy. Live Rich dashboard with instant alerting and automated PCAP capture for Wireshark forensic analysis.
-                </p>
-                <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/SniffGuard" target="_blank" rel="noopener">View Project</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- LLM Red-Teaming -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
-              <img src="assets/proj_llm.svg" class="card-img-top project-card-image" alt="LLM Red-Teaming Framework">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">LLM Red-Teaming Framework</h5>
-                <p class="card-text">
-                  Automated adversarial AI testing framework using a multi-agent judge–mutator architecture to evaluate LLM robustness against jailbreak attacks. Tested on JailbreakBench across 4 harm categories, identifying vulnerabilities within 10–15 iterations.
-                </p>
-                <a class="btn btn-outline-primary mt-auto" href="https://github.com/YuriMatyash/ML-Guided-Cyber-Security" target="_blank" rel="noopener">View Project</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Eviation Cyber Platform -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
-              <img src="assets/proj_eviation.svg" class="card-img-top project-card-image" alt="Eviation Cyber Platform">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Eviation Cyber Platform</h5>
-                <p class="card-text">
-                  Capstone project — built the honeypot deception engine: Data Bomb (100GB backpressure streams via Node.js), Tarpit (async attacker delays), and dynamic decoy dashboards with Faker.js honey tokens and sandboxed XSS logging.
-                </p>
-                <a class="btn btn-outline-primary mt-auto" href="https://github.com/yanivbahalul/Evation-cyber-platform" target="_blank" rel="noopener">View Project</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Wine Classification -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
-              <img src="assets/proj2.png" class="card-img-top project-card-image" alt="Wine Classification ML">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Wine Classification – Random Forest</h5>
-                <p class="card-text">
-                  Supervised ML pipeline classifying wine types by chemical properties. Random Forest model achieves high accuracy and F1 score, with full EDA and feature importance analysis.
-                </p>
-                <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/supervised_learning_flow-wine" target="_blank" rel="noopener">View Project</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- GenAI – Vinyl Album Identification -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
-              <img src="assets/proj_genai.svg" class="card-img-top project-card-image" alt="Vinyl Album Identification – Computer Vision">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Vinyl Album Identification</h5>
-                <p class="card-text">
-                  Computer Vision project matching low-quality CCTV footage of vinyl albums to catalog images using ResNet50 and a Siamese network with Triplet Margin Loss. Generated 5,000 synthetic training samples via GLIGEN, achieving 77% Top-1 accuracy.
-                </p>
-                <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/GenAiProject" target="_blank" rel="noopener">View Project</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- TEAM -->
-      <div class="tab-pane fade" id="team" role="tabpanel" aria-labelledby="team-tab">
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
-              <img src="assets/teamtcpchat.png" class="card-img-top project-card-image" alt="Python TCP Chat System">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Python-based TCP Chat System</h5>
-                <p class="card-text">
-                  A Python-based TCP chat system with client–server architecture, supporting unique usernames and private (direct) messages.
-                </p>
-                <a class="btn btn-outline-primary mt-auto" href="https://github.com/ArbelKoren10/tcp-chat-system" target="_blank" rel="noopener">View Project</a>
-              </div>
-            </div>
+      <!-- SniffGuard -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/proj1.png" class="card-img-top project-card-image" alt="SniffGuard IDS">
+          <div class="card-body d-flex flex-column">
+            <span class="proj-tag tag-sec mb-2">Network Security</span>
+            <h5 class="card-title">SniffGuard</h5>
+            <p class="card-text">
+              Real-time IDS detecting 4 stealth scan types (SYN, FIN, NULL, XMAS) using Python &amp; Scapy. Live Rich dashboard with instant alerting and automated PCAP capture for Wireshark forensic analysis.
+            </p>
+            <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/SniffGuard" target="_blank" rel="noopener">View Project</a>
           </div>
         </div>
       </div>
+
+      <!-- LLM Red-Teaming -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/proj_llm.svg" class="card-img-top project-card-image" alt="LLM Red-Teaming Framework">
+          <div class="card-body d-flex flex-column">
+            <span class="proj-tag tag-ai mb-2">AI Security</span>
+            <h5 class="card-title">LLM Red-Teaming Framework</h5>
+            <p class="card-text">
+              Automated adversarial AI testing framework using a multi-agent judge–mutator architecture to evaluate LLM robustness against jailbreak attacks. Tested on JailbreakBench across 4 harm categories, identifying vulnerabilities within 10–15 iterations.
+            </p>
+            <a class="btn btn-outline-primary mt-auto" href="https://github.com/YuriMatyash/ML-Guided-Cyber-Security" target="_blank" rel="noopener">View Project</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eviation Cyber Platform -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/proj_eviation.svg" class="card-img-top project-card-image" alt="Eviation Cyber Platform">
+          <div class="card-body d-flex flex-column">
+            <span class="proj-tag tag-sec mb-2">Cybersecurity</span>
+            <h5 class="card-title">Eviation Cyber Platform</h5>
+            <p class="card-text">
+              Capstone project — built the honeypot deception engine: Data Bomb (100GB backpressure streams via Node.js), Tarpit (async attacker delays), and dynamic decoy dashboards with Faker.js honey tokens and sandboxed XSS logging.
+            </p>
+            <a class="btn btn-outline-primary mt-auto" href="https://github.com/yanivbahalul/Evation-cyber-platform" target="_blank" rel="noopener">View Project</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vinyl Album Identification -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/proj_genai.svg" class="card-img-top project-card-image" alt="Vinyl Album Identification – Computer Vision">
+          <div class="card-body d-flex flex-column">
+            <span class="proj-tag tag-cv mb-2">Computer Vision</span>
+            <h5 class="card-title">Vinyl Album Identification</h5>
+            <p class="card-text">
+              Matches low-quality CCTV footage of vinyl albums to catalog images using ResNet50 and a Siamese network with Triplet Margin Loss. Generated 5,000 synthetic training samples via GLIGEN, achieving 77% Top-1 accuracy.
+            </p>
+            <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/GenAiProject" target="_blank" rel="noopener">View Project</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wine Classification -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/proj2.png" class="card-img-top project-card-image" alt="Wine Classification ML">
+          <div class="card-body d-flex flex-column">
+            <span class="proj-tag tag-ml mb-2">Machine Learning</span>
+            <h5 class="card-title">Wine Classification – Random Forest</h5>
+            <p class="card-text">
+              Supervised ML pipeline classifying wine types by chemical properties. Random Forest model achieves high accuracy and F1 score, with full EDA and feature importance analysis.
+            </p>
+            <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/supervised_learning_flow-wine" target="_blank" rel="noopener">View Project</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TCP Chat System -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/teamtcpchat.png" class="card-img-top project-card-image" alt="Python TCP Chat System">
+          <div class="card-body d-flex flex-column">
+            <span class="proj-tag tag-net mb-2">Networking</span>
+            <h5 class="card-title">Python-based TCP Chat System</h5>
+            <p class="card-text">
+              A Python-based TCP chat system with client–server architecture, supporting unique usernames and private (direct) messages.
+            </p>
+            <a class="btn btn-outline-primary mt-auto" href="https://github.com/ArbelKoren10/tcp-chat-system" target="_blank" rel="noopener">View Project</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

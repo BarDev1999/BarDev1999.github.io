@@ -150,18 +150,15 @@ footer{ background:var(--bg); color:var(--muted); }
 @media (max-width:992px){ .hero-img{ max-width:300px; } }
 @media (max-width:576px){ .hero{ min-height:50vh; } .display-5{ font-size:2rem; } }
 
-/* ===== Tabs בפרויקטים ===== */
-.project-switch .nav-link{
-  display:flex; align-items:center; gap:.5rem;
-  padding:.6rem 1rem; border-radius:12px; font-weight:600;
-  background:#f1f5ff; color:#0b3d91; border:1px solid #dbe4ff;
-  transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s;
+/* ===== תגיות קטגוריה בפרויקטים ===== */
+.proj-tag{
+  display:inline-block;
+  font-size:.75rem; font-weight:700; letter-spacing:.04em;
+  padding:.3em .8em; border-radius:9999px;
+  text-transform:uppercase;
 }
-.project-switch .nav-link:hover{
-  transform:translateY(-1px);
-  box-shadow:0 6px 18px rgba(11,61,145,.12);
-}
-.project-switch .nav-link.active{
-  background:#0d6efd; color:#fff; border-color:#0d6efd;
-  box-shadow:0 6px 18px rgba(13,110,253,.28);
-}
+.tag-sec { background:#fef3c7; color:#92400e; }
+.tag-ai  { background:#ede9fe; color:#4c1d95; }
+.tag-ml  { background:#d1fae5; color:#065f46; }
+.tag-cv  { background:#fce7f3; color:#831843; }
+.tag-net { background:#dbeafe; color:#1e40af; }
