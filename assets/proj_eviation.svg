@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#042f2e"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+
+  <!-- background blobs -->
+  <circle cx="680" cy="80"  r="170" fill="rgba(20,184,166,0.08)"/>
+  <circle cx="100" cy="320" r="120" fill="rgba(13,148,136,0.08)"/>
+
+  <!-- honeypot jar shape -->
+  <ellipse cx="400" cy="185" rx="70" ry="18" fill="rgba(255,221,51,0.18)"/>
+  <path d="M330 185 Q318 260 340 295 Q370 320 400 322 Q430 320 460 295 Q482 260 470 185 Z"
+        fill="rgba(255,221,51,0.13)" stroke="rgba(255,221,51,0.45)" stroke-width="2"/>
+  <ellipse cx="400" cy="320" rx="62" ry="14" fill="rgba(255,221,51,0.12)" stroke="rgba(255,221,51,0.4)" stroke-width="1.5"/>
+  <!-- honey drip -->
+  <path d="M400 322 Q402 338 400 348 Q398 338 400 322" fill="rgba(255,200,30,0.5)"/>
+
+  <!-- web lines emanating from jar -->
+  <line x1="400" y1="185" x2="200" y2="90"  stroke="rgba(45,212,191,0.3)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="400" y1="185" x2="155" y2="200" stroke="rgba(45,212,191,0.3)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="400" y1="185" x2="210" y2="310" stroke="rgba(45,212,191,0.3)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="400" y1="185" x2="600" y2="90"  stroke="rgba(45,212,191,0.3)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="400" y1="185" x2="645" y2="200" stroke="rgba(45,212,191,0.3)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="400" y1="185" x2="590" y2="310" stroke="rgba(45,212,191,0.3)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="400" y1="185" x2="400" y2="60"  stroke="rgba(45,212,191,0.3)" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- attacker nodes -->
+  <circle cx="200" cy="90"  r="10" fill="rgba(252,165,165,0.85)"/>
+  <circle cx="155" cy="200" r="10" fill="rgba(252,165,165,0.85)"/>
+  <circle cx="210" cy="310" r="10" fill="rgba(252,165,165,0.85)"/>
+  <circle cx="600" cy="90"  r="10" fill="rgba(252,165,165,0.85)"/>
+  <circle cx="645" cy="200" r="10" fill="rgba(252,165,165,0.85)"/>
+  <circle cx="590" cy="310" r="10" fill="rgba(252,165,165,0.85)"/>
+  <circle cx="400" cy="60"  r="10" fill="rgba(252,165,165,0.85)"/>
+
+  <!-- trapped labels -->
+  <text x="185" y="78"  font-family="Arial,sans-serif" font-size="10" fill="rgba(252,165,165,0.7)" text-anchor="middle">TRAPPED</text>
+  <text x="140" y="188" font-family="Arial,sans-serif" font-size="10" fill="rgba(252,165,165,0.7)" text-anchor="middle">TRAPPED</text>
+  <text x="400" y="48"  font-family="Arial,sans-serif" font-size="10" fill="rgba(252,165,165,0.7)" text-anchor="middle">TRAPPED</text>
+
+  <!-- title -->
+  <text x="400" y="346" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">Eviation Cyber Platform</text>
+  <text x="400" y="376" font-family="Arial,sans-serif" font-size="15" fill="rgba(94,234,212,0.8)" text-anchor="middle">Honeypot · Deception Engine · Node.js</text>
+</svg>
