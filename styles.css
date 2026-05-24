@@ -162,3 +162,77 @@ footer{ background:var(--bg); color:var(--muted); }
 .tag-ml  { background:#d1fae5; color:#065f46; }
 .tag-cv  { background:#fce7f3; color:#831843; }
 .tag-net { background:#dbeafe; color:#1e40af; }
+
+/* ===== SEED Labs ===== */
+.seed-lab-card {
+  border: none;
+  overflow: hidden;
+}
+
+.seed-lab-header {
+  padding: 1.2rem 1.5rem 1rem;
+  color: #fff;
+  position: relative;
+}
+
+.seed-lab-header.lab-sniff   { background: linear-gradient(135deg,#1e3a8a,#2563eb); }
+.seed-lab-header.lab-arp     { background: linear-gradient(135deg,#7c2d12,#c2410c); }
+.seed-lab-header.lab-ip      { background: linear-gradient(135deg,#4c1d95,#7c3aed); }
+.seed-lab-header.lab-dns     { background: linear-gradient(135deg,#064e3b,#059669); }
+.seed-lab-header.lab-dns-r   { background: linear-gradient(135deg,#0c4a6e,#0369a1); }
+
+.seed-lab-num {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  opacity: .8;
+}
+
+.seed-lab-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: .4rem 0 0;
+  color: #fff;
+}
+
+.seed-done-icon {
+  font-size: 1.15rem;
+  opacity: .9;
+}
+
+.seed-achievements {
+  padding-left: 1.1rem;
+  margin: .75rem 0 0;
+  font-size: .875rem;
+}
+
+.seed-achievements li {
+  margin-bottom: .45rem;
+  color: #374151;
+  line-height: 1.55;
+}
+
+.seed-beyond {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .22em .65em;
+  border-radius: 9999px;
+  background: #d1fae5;
+  color: #065f46;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.seed-coming-soon { opacity: .65; }
+
+.seed-all-badge {
+  font-size: .78rem;
+  font-weight: 700;
+  padding: .4em 1em;
+  border-radius: 9999px;
+  background: #d1fae5;
+  color: #065f46;
+}

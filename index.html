@@ -24,6 +24,7 @@
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#seed-labs">SEED Labs</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -238,6 +239,191 @@
               Supervised ML pipeline classifying wine types by chemical properties. Random Forest model achieves high accuracy and F1 score, with full EDA and feature importance analysis.
             </p>
             <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/supervised_learning_flow-wine" target="_blank" rel="noopener">View Project</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SEED LABS -->
+<section id="seed-labs" class="py-5 bg-white">
+  <div class="container">
+
+    <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+      <h2 class="mb-0">SEED Labs</h2>
+      <span class="seed-all-badge"><i class="bi bi-check-all me-1"></i>All Labs Completed · Above Requirements</span>
+    </div>
+    <p class="text-muted mb-4" style="max-width:720px;">
+      Hands-on network security research labs from the <strong>SEED (Security Education)</strong> curriculum,
+      completed as a 3-person team with <strong>Shalev Cohen</strong> and <strong>Noam Hadad</strong>.
+      Every lab was documented in depth with screenshots and full technical analysis.
+      All optional extensions and beyond-requirements challenges were completed successfully.
+    </p>
+
+    <div class="row g-4">
+
+      <!-- Lab 0+1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm seed-lab-card">
+          <div class="seed-lab-header lab-sniff">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="seed-lab-num"><i class="bi bi-wifi me-1"></i>Labs 0 + 1</span>
+              <i class="bi bi-check-circle-fill seed-done-icon"></i>
+            </div>
+            <h5 class="seed-lab-title">Packet Sniffing &amp; Spoofing</h5>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <p class="card-text small">
+              Dual implementation in Python/Scapy and C/libpcap: packet capture, BPF filtering,
+              IP spoofing, and live traffic manipulation at both high-level API and raw kernel level.
+            </p>
+            <ul class="seed-achievements">
+              <li>Packet sniffing with BPF filters (ICMP, TCP port 23, subnet CIDR) in Python and C</li>
+              <li>ICMP and UDP spoofing with forged source IPs via Raw Sockets</li>
+              <li>Custom Traceroute built from scratch using incremental TTL</li>
+              <li>Combined Sniff-and-Spoof: live ICMP Echo Reply injection on LAN</li>
+              <li>Telnet credential capture via C/pcap payload pointer arithmetic</li>
+              <li><span class="seed-beyond">Beyond</span> Full C pipeline (pcap + Raw Sockets), Promiscuous mode analysis, Reverse Path Filtering deep dive</li>
+            </ul>
+            <div class="tags mt-auto pt-3">
+              <span class="badge sec">Scapy</span>
+              <span class="badge c">C / libpcap</span>
+              <span class="badge sec">Wireshark</span>
+              <span class="badge bash">Raw Sockets</span>
+              <span class="badge linux">Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm seed-lab-card">
+          <div class="seed-lab-header lab-arp">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="seed-lab-num"><i class="bi bi-diagram-3 me-1"></i>Lab 1</span>
+              <i class="bi bi-check-circle-fill seed-done-icon"></i>
+            </div>
+            <h5 class="seed-lab-title">ARP Cache Poisoning</h5>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <p class="card-text small">
+              Full ARP poisoning attack chain: from all three cache-corruption methods to transparent
+              MITM on live Telnet and Netcat sessions with active payload modification.
+            </p>
+            <ul class="seed-achievements">
+              <li>3 poisoning vectors: ARP Request (op=1), Reply (op=2), Gratuitous broadcast</li>
+              <li>Two-way continuous MITM: both victims simultaneously redirected to attacker</li>
+              <li>Telnet MITM: real-time replacement of all alphabetic chars with Z</li>
+              <li>Netcat MITM: surgical "Adrian" to "AAAAAA" with exact TCP payload length preservation</li>
+              <li>Continuous re-poisoning loop to defeat ARP cache expiry</li>
+              <li><span class="seed-beyond">Beyond</span> Tested arpspoof + ettercap for one-command MITM; documented DAI (Dynamic ARP Inspection) defenses</li>
+            </ul>
+            <div class="tags mt-auto pt-3">
+              <span class="badge sec">Scapy</span>
+              <span class="badge sec">ARP / ICMP</span>
+              <span class="badge linux">Python</span>
+              <span class="badge sec">Wireshark</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm seed-lab-card">
+          <div class="seed-lab-header lab-ip">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="seed-lab-num"><i class="bi bi-layers me-1"></i>Lab 2</span>
+              <i class="bi bi-check-circle-fill seed-done-icon"></i>
+            </div>
+            <h5 class="seed-lab-title">IP / ICMP Attacks</h5>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <p class="card-text small">
+              Advanced IP-layer attacks: fragmentation abuse, ICMP control-plane hijacking,
+              kernel-memory DoS, and multi-subnet routing manipulation.
+            </p>
+            <ul class="seed-achievements">
+              <li>IP fragmentation with precise Offset/Flags math; overlapping fragment exploit (Teardrop variant)</li>
+              <li>Ping of Death: crafted 65,535+ byte payload split across two fragments</li>
+              <li>Fragment Flood DoS in Python/Scapy and C/Raw Sockets: 75% packet loss confirmed</li>
+              <li>ICMP Redirect attack: hijacked victim routing cache to reroute external traffic</li>
+              <li>Manual multi-subnet router: ifconfig, ip route, IP Forwarding via sysctl</li>
+              <li><span class="seed-beyond">Beyond</span> Strict vs Loose RPF bypass, IP-in-IP encapsulation to evade RPF, 5-terminal parallel C DoS</li>
+            </ul>
+            <div class="tags mt-auto pt-3">
+              <span class="badge c">C / Raw Sockets</span>
+              <span class="badge sec">Scapy</span>
+              <span class="badge sec">ICMP / IP</span>
+              <span class="badge linux">Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm seed-lab-card">
+          <div class="seed-lab-header lab-dns">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="seed-lab-num"><i class="bi bi-server me-1"></i>Lab 3</span>
+              <i class="bi bi-check-circle-fill seed-done-icon"></i>
+            </div>
+            <h5 class="seed-lab-title">Local DNS Attacks</h5>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <p class="card-text small">
+              End-to-end DNS attack surface from hosts-file hijacking to multi-section cache poisoning,
+              including Bailiwick Rule bypass research and AAAA race condition exploitation.
+            </p>
+            <ul class="seed-achievements">
+              <li>BIND9 setup: recursive resolver + authoritative zone for example.com</li>
+              <li>Hosts file poisoning: redirected www.bank32.com to attacker IP (phishing simulation)</li>
+              <li>Direct DNS spoofing: sniff query then inject reply before real server responds</li>
+              <li>DNS Cache Poisoning: poisoned resolver with 259,000s TTL forged A record</li>
+              <li>Authority Section poisoning and Bailiwick Rule bypass (Piggybacking + Decoupled)</li>
+              <li><span class="seed-beyond">Beyond</span> Additional Section attacks, AAAA/IPv6 race condition exploit, DNSSEC configuration theory</li>
+            </ul>
+            <div class="tags mt-auto pt-3">
+              <span class="badge sec">BIND9 / DNS</span>
+              <span class="badge sec">Scapy</span>
+              <span class="badge linux">Python</span>
+              <span class="badge sec">dig / Wireshark</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 4 Coming Soon -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm seed-lab-card seed-coming-soon">
+          <div class="seed-lab-header lab-dns-r">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="seed-lab-num"><i class="bi bi-globe me-1"></i>Lab 4</span>
+              <span class="badge" style="background:rgba(255,255,255,.22);color:#fff;font-size:.7rem;border-radius:9999px;padding:.3em .8em;">Coming Soon</span>
+            </div>
+            <h5 class="seed-lab-title">Remote DNS Cache Poisoning</h5>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <p class="card-text small">
+              The Kaminsky Attack: remote DNS cache poisoning without LAN access, exploiting
+              16-bit Transaction ID entropy and source port predictability in unprotected resolvers.
+            </p>
+            <ul class="seed-achievements">
+              <li>Kaminsky Attack: flood resolver with spoofed replies for random subdomains</li>
+              <li>Source port randomization analysis and timing-window exploitation</li>
+              <li>Custom attacker DNS server (adrian.com) as NS injection target</li>
+              <li>Full resolver cache poisoning without being on the same LAN segment</li>
+            </ul>
+            <div class="tags mt-auto pt-3">
+              <span class="badge sec">Kaminsky Attack</span>
+              <span class="badge sec">BIND9</span>
+              <span class="badge linux">Python</span>
+              <span class="badge sec">DNS / UDP</span>
+            </div>
           </div>
         </div>
       </div>
