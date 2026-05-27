@@ -180,6 +180,7 @@ footer{ background:var(--bg); color:var(--muted); }
 .seed-lab-header.lab-ip      { background: linear-gradient(135deg,#4c1d95,#7c3aed); }
 .seed-lab-header.lab-dns     { background: linear-gradient(135deg,#064e3b,#059669); }
 .seed-lab-header.lab-dns-r   { background: linear-gradient(135deg,#0c4a6e,#0369a1); }
+.seed-lab-header.lab-rsa     { background: linear-gradient(135deg,#78350f,#d97706); }
 
 .seed-lab-num {
   font-size: .72rem;
