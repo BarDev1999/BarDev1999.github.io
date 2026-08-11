@@ -1,9 +1,8 @@
-// Bootstrap form validation + UX
+// ===== Contact form: Bootstrap validation UX =====
 (() => {
   'use strict';
-  const forms = document.querySelectorAll('.needs-validation');
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
+  document.querySelectorAll('.needs-validation').forEach((form) => {
+    form.addEventListener('submit', (event) => {
       if (!form.checkValidity()) {
         event.preventDefault();
         event.stopPropagation();
@@ -15,18 +14,70 @@
   });
 })();
 
-// הדגשת קישור פעיל בניווט בעת גלילה
-(function activeNavOnScroll(){
-  const links = document.querySelectorAll('.navbar .nav-link[href^="#"]');
-  const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-  if (!sections.length) return;
+// ===== Active nav link on scroll (IntersectionObserver) =====
+(() => {
+  const links = Array.from(document.querySelectorAll('.navbar .nav-link[href^="#"]'));
+  const map = new Map();
+  links.forEach((a) => {
+    const sec = document.querySelector(a.getAttribute('href'));
+    if (sec) map.set(sec, a);
+  });
+  if (!map.size) return;
 
-  const onScroll = () => {
-    const pos = window.scrollY + 120;
-    let current = sections[0].id;
-    for (const sec of sections) if (pos >= sec.offsetTop) current = sec.id;
-    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${current}`));
+  const setActive = (link) => {
+    links.forEach((a) => {
+      const on = a === link;
+      a.classList.toggle('active', on);
+      if (on) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
   };
-  document.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('load', onScroll);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) setActive(map.get(entry.target));
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+  map.forEach((_, sec) => observer.observe(sec));
+})();
+
+// ===== Mobile menu: auto-close after choosing a link =====
+(() => {
+  const nav = document.getElementById('nav');
+  if (!nav) return;
+  nav.querySelectorAll('.nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (nav.classList.contains('show') && window.bootstrap) {
+        window.bootstrap.Collapse.getOrCreateInstance(nav).hide();
+      }
+    });
+  });
+})();
+
+// ===== Theme toggle (light / dark) =====
+(() => {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  const root = document.documentElement;
+  const icon = btn.querySelector('i');
+
+  const sync = (theme) => {
+    if (icon) icon.className = theme === 'dark' ? 'bi bi-sun' : 'bi bi-moon-stars';
+    btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+  };
+  sync(root.getAttribute('data-bs-theme') || 'light');
+
+  btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-bs-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
+    sync(next);
+  });
+})();
+
+// ===== Footer year =====
+(() => {
+  const el = document.getElementById('year');
+  if (el) el.textContent = new Date().getFullYear();
 })();

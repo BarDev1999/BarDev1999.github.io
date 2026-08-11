@@ -3,111 +3,233 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bar Sberro • Portfolio</title>
-  <meta name="description" content="Bar Sberro – IT Security Specialist & CS Student specializing in Cybersecurity, Cloud Identity, and AI-driven threat detection.">
-  <link rel="icon" href="assets/meblue.png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
+
+  <title>Bar Sberro | Identity &amp; Cloud Security</title>
+  <meta name="description" content="Bar Sberro — Identity &amp; Cloud Security at Earnix. B.Sc. Computer Science graduate (HIT), Cybersecurity &amp; AI specialization. Entra ID, detection engineering, IDS, LLM red-teaming and SEED Labs.">
+  <link rel="canonical" href="https://bardev1999.github.io/">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://bardev1999.github.io/">
+  <meta property="og:title" content="Bar Sberro | Identity &amp; Cloud Security">
+  <meta property="og:description" content="Identity &amp; Cloud Security at Earnix. B.Sc. Computer Science graduate (HIT). Entra ID, detection engineering, IDS, LLM red-teaming, SEED Labs.">
+  <meta property="og:image" content="https://bardev1999.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bar Sberro — Identity and Cloud Security portfolio">
+  <meta property="og:site_name" content="Bar Sberro">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bar Sberro | Identity &amp; Cloud Security">
+  <meta name="twitter:description" content="Identity &amp; Cloud Security at Earnix. B.Sc. Computer Science graduate (HIT). Entra ID, detection engineering, IDS, LLM red-teaming, SEED Labs.">
+  <meta name="twitter:image" content="https://bardev1999.github.io/assets/og-image.png">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <!-- Set theme before paint to avoid flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-bs-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+      }
+    })();
+  </script>
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"
+        integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+  <link href="styles.css?v=2" rel="stylesheet">
+
+  <!-- Structured data (matches visible page content) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "dateModified": "2026-08-11",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://bardev1999.github.io/#person",
+      "name": "Bar Sberro",
+      "url": "https://bardev1999.github.io/",
+      "image": "https://bardev1999.github.io/assets/meblue.png",
+      "jobTitle": "IT Specialist, Identity, Endpoint & Cloud Security Operations",
+      "worksFor": { "@type": "Organization", "name": "Earnix" },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Holon Institute of Technology",
+        "url": "https://www.hit.ac.il/"
+      },
+      "address": { "@type": "PostalAddress", "addressRegion": "Central District", "addressCountry": "IL" },
+      "knowsAbout": [
+        "Identity and Access Management", "Microsoft Entra ID", "Conditional Access",
+        "Cloud Security", "Endpoint Security", "Detection Engineering", "Network Security",
+        "Intrusion Detection Systems", "LLM Red-Teaming", "Machine Learning"
+      ],
+      "knowsLanguage": ["Hebrew", "English"],
+      "sameAs": [
+        "https://github.com/BarDev1999",
+        "https://www.linkedin.com/in/bar-sberro/"
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav class="navbar navbar-expand-lg shadow-sm fixed-top" aria-label="Primary">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#home">Bar Sberro</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div id="nav" class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+      <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#seed-labs">SEED Labs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#seed-labs">Write-ups</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <button id="theme-toggle" class="btn btn-sm btn-outline-secondary theme-toggle" type="button" aria-label="Switch color theme">
+            <i class="bi bi-moon-stars" aria-hidden="true"></i>
+          </button>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 
+<main id="main">
+
 <!-- HERO -->
-<header id="home" class="py-5 bg-alt hero">
-  <div class="container py-5">
-    <div class="row align-items-center gy-4">
+<header id="home" class="hero bg-alt">
+  <div class="container">
+    <div class="row align-items-center gy-5">
       <div class="col-lg-7">
-        <h1 class="display-5 fw-bold">IT Security Specialist &amp; CS Student</h1>
-        <p class="lead mb-4">Cybersecurity Researcher | Cloud &amp; Identity | AI-Driven</p>
-        <a href="#contact" class="btn btn-primary btn-lg me-2">Get In Touch</a>
-        <a href="assets/BarSberro CV.pdf" download class="btn btn-outline-primary btn-lg">
-          <i class="bi bi-download me-1"></i> Download CV
-        </a>
+        <p class="section-label font-mono mb-2">~$ whoami</p>
+        <h1 class="display-5 fw-bold mb-1">Bar Sberro</h1>
+        <p class="h4 hero-role mb-3">Identity &amp; Cloud Security</p>
+        <p class="lead mb-3">
+          I run identity, endpoint and cloud security operations at Earnix, a fintech of ~450 employees,
+          on Microsoft Entra ID, Conditional Access, Intune and Purview, and I build and document
+          detection tools in the lab.
+        </p>
+        <p class="text-body-secondary mb-4">
+          B.Sc. Computer Science, Cybersecurity &amp; AI (HIT, 2026) &middot; Central District, Israel &middot;
+          Open to junior Identity / Cloud Security and SOC / Detection roles.
+        </p>
+        <div class="d-flex flex-wrap gap-2 align-items-center">
+          <a href="#projects" class="btn btn-primary btn-lg">View Projects</a>
+          <a href="assets/Bar-Sberro-CV.pdf" download="Bar-Sberro-CV.pdf" class="btn btn-outline-primary btn-lg">
+            <i class="bi bi-download me-1" aria-hidden="true"></i>Download CV
+          </a>
+          <div class="hero-links d-flex gap-3 ms-lg-2 fs-4">
+            <a href="https://github.com/BarDev1999" target="_blank" rel="me noopener" aria-label="GitHub profile"><i class="bi bi-github" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/bar-sberro/" target="_blank" rel="me noopener" aria-label="LinkedIn profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+            <a href="mailto:barsgh@gmail.com" aria-label="Email Bar"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>
+          </div>
+        </div>
       </div>
       <div class="col-lg-5 text-center">
-        <img src="assets/meblue.png" class="rounded-circle img-fluid hero-img" alt="Bar Sberro's profile picture">
+        <img src="assets/meblue.png" width="317" height="328" fetchpriority="high" decoding="async"
+             class="rounded-circle img-fluid hero-img" alt="Portrait of Bar Sberro">
       </div>
     </div>
   </div>
 </header>
 
-
 <!-- ABOUT -->
-<section id="about" class="py-5 bg-white">
+<section id="about" class="bg-white" aria-labelledby="about-h">
   <div class="container">
-    <h2 class="mb-4">About Me</h2>
-    <p>
-      Final-year Computer Science student at HIT - Holon Institute of Technology (GPA 84), specializing in <strong>Cybersecurity &amp; AI</strong>. Currently working as IT Specialist at <strong>Earnix</strong>, managing identity security, access control, and endpoint compliance for 450+ employees. Passionate about offensive security research, network defense, and AI-driven threat detection - combining hands on enterprise IT with independent security research and academic excellence.
+    <p class="section-label font-mono">01 / About</p>
+    <h2 id="about-h" class="mb-4">About Me</h2>
+    <p class="about-lead">
+      I work in security operations at <strong>Earnix</strong>, a ~450-employee fintech, running identity, endpoint
+      and cloud security: Microsoft Entra ID and Conditional Access, MFA/SSO, Intune and Kandji, Microsoft Purview DLP,
+      and joiner-mover-leaver automation with PowerShell and the Microsoft Graph API. I hold a
+      <strong>B.Sc. in Computer Science</strong> from HIT (2026), Cybersecurity &amp; AI specialization, with a
+      <strong>96 final specialization-year average</strong>. Off the clock I build and document security projects,
+      an IDS, a deception engine and an LLM red-teaming framework, all in isolated lab environments.
     </p>
+
     <div class="row g-4 mt-2">
       <div class="col-md-6 col-lg-3">
-        <h5 class="mb-2">Languages</h5>
+        <h3 class="h6 skill-head">Cloud &amp; Identity</h3>
         <div class="tags">
-          <span class="badge python">Python</span>
-          <span class="badge java">Java</span>
-          <span class="badge cpp">C++</span>
-          <span class="badge c">C</span>
-          <span class="badge sql">SQL</span>
-          <span class="badge powershell">PowerShell</span>
-          <span class="badge bash">Bash</span>
+          <span class="badge-chip accent">Microsoft Entra ID</span>
+          <span class="badge-chip">Conditional Access</span>
+          <span class="badge-chip">MFA / SSO</span>
+          <span class="badge-chip">Intune / Kandji</span>
+          <span class="badge-chip">Active Directory</span>
+          <span class="badge-chip">Microsoft Purview</span>
+          <span class="badge-chip">Graph API</span>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
-        <h5 class="mb-2">Cybersecurity</h5>
+        <h3 class="h6 skill-head">Detection &amp; Analysis</h3>
         <div class="tags">
-          <span class="badge sec">Wireshark / PCAP</span>
-          <span class="badge sec">Scapy / IDS</span>
-          <span class="badge sec">MITRE ATT&amp;CK</span>
-          <span class="badge sec">Vuln. Assessment</span>
+          <span class="badge-chip accent">MITRE ATT&amp;CK</span>
+          <span class="badge-chip">Entra ID log monitoring</span>
+          <span class="badge-chip">Wireshark / PCAP</span>
+          <span class="badge-chip">Scapy / IDS</span>
+          <span class="badge-chip">Vuln. Assessment</span>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
-        <h5 class="mb-2">Cloud &amp; Identity</h5>
+        <h3 class="h6 skill-head">Programming</h3>
         <div class="tags">
-          <span class="badge cloud">Azure AD</span>
-          <span class="badge cloud">Intune / MDM</span>
-          <span class="badge cloud">Active Directory</span>
-          <span class="badge cloud">Microsoft Purview</span>
-          <span class="badge cloud">Graph API</span>
+          <span class="badge-chip">Python</span>
+          <span class="badge-chip">PowerShell</span>
+          <span class="badge-chip">Bash</span>
+          <span class="badge-chip">SQL</span>
+          <span class="badge-chip">C</span>
+          <span class="badge-chip">Git</span>
+          <span class="badge-chip">Linux</span>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
-        <h5 class="mb-2">AI &amp; Data</h5>
+        <h3 class="h6 skill-head">AI &amp; Data</h3>
         <div class="tags">
-          <span class="badge ai">Scikit-learn</span>
-          <span class="badge ai">Pandas &amp; NumPy</span>
-          <span class="badge ai">LLM Red-Teaming</span>
-          <span class="badge linux">Git</span>
-          <span class="badge linux">Linux</span>
+          <span class="badge-chip accent">LLM Red-Teaming</span>
+          <span class="badge-chip">Scikit-learn</span>
+          <span class="badge-chip">Pandas / NumPy</span>
         </div>
       </div>
+    </div>
+
+    <div class="about-meta mt-4">
+      <span><i class="bi bi-shield-check me-1" aria-hidden="true"></i>Full service, combat soldier, Israel Border Police</span>
+      <span><i class="bi bi-people me-1" aria-hidden="true"></i>Perach mentoring volunteer (2023)</span>
+      <span><i class="bi bi-translate me-1" aria-hidden="true"></i>Hebrew (native) &middot; English (fluent)</span>
     </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="py-5 bg-alt">
+<section id="experience" class="bg-alt" aria-labelledby="exp-h">
   <div class="container">
-    <h2 class="mb-4">Experience</h2>
+    <p class="section-label font-mono">02 / Experience</p>
+    <h2 id="exp-h" class="mb-4">Experience</h2>
     <div class="d-flex flex-column gap-4">
 
       <!-- Earnix -->
@@ -115,24 +237,24 @@
         <div class="card-body">
           <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
             <div>
-              <h5 class="mb-1">IT Specialist</h5>
-              <span class="exp-company"><i class="bi bi-building me-1"></i>Earnix</span>
+              <h3 class="h5 mb-1">IT Specialist, Identity, Endpoint &amp; Cloud Security Operations</h3>
+              <span class="exp-company"><i class="bi bi-building me-1" aria-hidden="true"></i>Earnix &middot; Fintech, ~450 employees</span>
             </div>
-            <span class="badge exp-date">2025 – Present</span>
+            <span class="badge exp-date">Nov 2025 &ndash; Present</span>
           </div>
           <ul class="exp-list">
-            <li>Secured identity lifecycle for <strong>450+ users</strong> via PowerShell automation across AD, Azure AD, M365, and Exchange - same-day offboarding with immediate account removal</li>
-            <li>Configured Conditional Access policies eliminating legacy auth org-wide; enforced MFA &amp; SSO; implemented DLP via <strong>Microsoft Purview</strong></li>
-            <li>Monitored Azure AD audit &amp; sign in logs for anomalous activity; managed endpoint compliance via <strong>Intune</strong> (Windows) and <strong>Kandji</strong> (Mac)</li>
-            <li>Managed VPN access, firewall rules, and network segmentation; automated operations via <strong>PowerShell &amp; Microsoft Graph API</strong></li>
+            <li>Administer <strong>Microsoft Entra ID</strong> for ~450 users: Conditional Access policies enforcing MFA/SSO, blocking legacy authentication, and gating access on Intune / Kandji device compliance as Zero Trust controls.</li>
+            <li>Automate the full <strong>joiner-mover-leaver</strong> identity lifecycle with PowerShell and the Microsoft Graph API across Active Directory, Entra ID, M365 and Exchange, enabling same-day offboarding.</li>
+            <li>Monitor Entra ID sign-in and audit logs for anomalous and risky sign-ins; investigate and escalate true positives.</li>
+            <li>Enforce endpoint compliance via <strong>Intune</strong> (Windows) and <strong>Kandji</strong> (macOS); operate <strong>Microsoft Purview</strong> DLP; administer VPN, firewall rules and network segmentation.</li>
           </ul>
           <div class="tags mt-3">
-            <span class="badge cloud">Azure AD</span>
-            <span class="badge cloud">Intune</span>
-            <span class="badge cloud">Microsoft Purview</span>
-            <span class="badge powershell">PowerShell</span>
-            <span class="badge cloud">Active Directory</span>
-            <span class="badge cloud">M365</span>
+            <span class="badge-chip">Microsoft Entra ID</span>
+            <span class="badge-chip">Conditional Access</span>
+            <span class="badge-chip">Intune</span>
+            <span class="badge-chip">Microsoft Purview</span>
+            <span class="badge-chip">PowerShell</span>
+            <span class="badge-chip">Graph API</span>
           </div>
         </div>
       </div>
@@ -142,18 +264,18 @@
         <div class="card-body">
           <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
             <div>
-              <h5 class="mb-1">Computer Technician</h5>
-              <span class="exp-company"><i class="bi bi-building me-1"></i>Malam Team</span>
+              <h3 class="h5 mb-1">Computer Technician</h3>
+              <span class="exp-company"><i class="bi bi-building me-1" aria-hidden="true"></i>Malam Team</span>
             </div>
             <span class="badge exp-date">2025</span>
           </div>
           <ul class="exp-list">
-            <li>Network troubleshooting (TCP/IP, DNS, DHCP) and endpoint hardening across client environments</li>
+            <li>Troubleshot TCP/IP, DNS and DHCP and performed endpoint hardening across client environments.</li>
           </ul>
           <div class="tags mt-3">
-            <span class="badge sec">Network Troubleshooting</span>
-            <span class="badge linux">Linux</span>
-            <span class="badge sec">Endpoint Hardening</span>
+            <span class="badge-chip">Network Troubleshooting</span>
+            <span class="badge-chip">Endpoint Hardening</span>
+            <span class="badge-chip">Linux</span>
           </div>
         </div>
       </div>
@@ -162,83 +284,162 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="py-5 bg-white">
+<!-- EDUCATION -->
+<section id="education" class="bg-white" aria-labelledby="edu-h">
   <div class="container">
-    <h2 class="mb-4">Projects</h2>
+    <p class="section-label font-mono">03 / Education</p>
+    <h2 id="edu-h" class="mb-4">Education</h2>
+
+    <div class="card exp-card mb-4">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-2">
+          <div>
+            <h3 class="h5 mb-1">B.Sc. Computer Science, Cybersecurity &amp; AI specialization</h3>
+            <span class="exp-company"><i class="bi bi-mortarboard me-1" aria-hidden="true"></i>Holon Institute of Technology (HIT)</span>
+          </div>
+          <span class="badge exp-date">2023 &ndash; 2026</span>
+        </div>
+
+        <div class="edu-stats row g-3 mt-1 mb-3">
+          <div class="col-4">
+            <div class="stat">
+              <span class="stat-num">96</span>
+              <span class="stat-label">Final specialization-year average</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="stat">
+              <span class="stat-num">100</span>
+              <span class="stat-label">Final capstone project</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="stat">
+              <span class="stat-num">86</span>
+              <span class="stat-label">Cumulative average</span>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="h6 skill-head">Selected grades</h4>
+        <div class="tags">
+          <span class="badge-chip grade">Reverse Engineering &amp; Malware Analysis <b>100</b></span>
+          <span class="badge-chip grade">Computer Security <b>100</b></span>
+          <span class="badge-chip grade">Intro to AI-Driven Cybersecurity <b>100</b></span>
+          <span class="badge-chip grade">Machine Learning <b>100</b></span>
+          <span class="badge-chip grade">Network &amp; Internet Security <b>90</b></span>
+          <span class="badge-chip grade">Software Engineering <b>94</b></span>
+          <span class="badge-chip grade">Databases <b>92</b></span>
+          <span class="badge-chip">plus theory coursework (Automata, Computability) averaging 97</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="h6 skill-head">Training &amp; Courses</h3>
+    <div class="tags">
+      <span class="badge-chip"><i class="bi bi-journal-code me-1" aria-hidden="true"></i>Practical Ethical Hacking (PEH), TCM Security</span>
+      <span class="badge-chip"><i class="bi bi-hdd-network me-1" aria-hidden="true"></i>6 SEED Labs, documented on GitHub</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="bg-alt" aria-labelledby="proj-h">
+  <div class="container">
+    <p class="section-label font-mono">04 / Projects</p>
+    <h2 id="proj-h" class="mb-4">Projects</h2>
     <div class="row g-4">
 
       <!-- SniffGuard -->
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm">
-          <img src="assets/proj1.png" class="card-img-top project-card-image" alt="SniffGuard IDS">
+        <div class="card h-100">
+          <img src="assets/proj1.webp" width="800" height="400" class="card-img-top project-card-image" alt="" loading="lazy" decoding="async">
           <div class="card-body d-flex flex-column">
             <span class="proj-tag tag-sec mb-2">Network Security</span>
-            <h5 class="card-title">SniffGuard</h5>
+            <h3 class="h5 card-title">SniffGuard</h3>
             <p class="card-text">
-              Real-time IDS detecting 4 stealth scan types (SYN, FIN, NULL, XMAS) using Python &amp; Scapy. Live Rich dashboard with instant alerting and automated PCAP capture for Wireshark forensic analysis.
+              Real-time intrusion detection system in Python and Scapy that detects four stealth scan types
+              (SYN, FIN, NULL, XMAS), mapped to MITRE ATT&amp;CK T1046. Live alerting dashboard with automated
+              PCAP capture for Wireshark forensic analysis. Built and tested in an isolated lab.
             </p>
-            <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/SniffGuard" target="_blank" rel="noopener">View Project</a>
+            <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/SniffGuard" target="_blank" rel="noopener">
+              <i class="bi bi-github me-1" aria-hidden="true"></i>View Project
+            </a>
           </div>
         </div>
       </div>
 
       <!-- LLM Red-Teaming -->
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm">
-          <img src="assets/proj_llm.svg" class="card-img-top project-card-image" alt="LLM Red-Teaming Framework">
+        <div class="card h-100">
+          <img src="assets/proj_llm.svg" width="800" height="400" class="card-img-top project-card-image" alt="" loading="lazy" decoding="async">
           <div class="card-body d-flex flex-column">
             <span class="proj-tag tag-ai mb-2">AI Security</span>
-            <h5 class="card-title">LLM Red-Teaming Framework</h5>
+            <h3 class="h5 card-title">LLM Red-Teaming Framework</h3>
             <p class="card-text">
-              Automated adversarial AI testing framework using a multi-agent judge–mutator architecture to evaluate LLM robustness against jailbreak attacks. Tested on JailbreakBench across 4 harm categories, identifying vulnerabilities within 10–15 iterations.
+              Automated adversarial framework with a multi-agent judge-and-mutator architecture that probes LLM
+              guardrails. Evaluated on JailbreakBench across four harm categories, aligned to the OWASP LLM Top 10,
+              alongside an ML pipeline classifying malicious versus benign network traffic.
             </p>
-            <a class="btn btn-outline-primary mt-auto" href="https://github.com/YuriMatyash/ML-Guided-Cyber-Security" target="_blank" rel="noopener">View Project</a>
+            <a class="btn btn-outline-primary mt-auto" href="https://github.com/YuriMatyash/ML-Guided-Cyber-Security" target="_blank" rel="noopener">
+              <i class="bi bi-github me-1" aria-hidden="true"></i>View Project
+            </a>
           </div>
         </div>
       </div>
 
       <!-- Eviation Cyber Platform -->
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm">
-          <img src="assets/proj_eviation.svg" class="card-img-top project-card-image" alt="Eviation Cyber Platform">
+        <div class="card h-100">
+          <img src="assets/proj_eviation.svg" width="800" height="400" class="card-img-top project-card-image" alt="" loading="lazy" decoding="async">
           <div class="card-body d-flex flex-column">
             <span class="proj-tag tag-sec mb-2">Cybersecurity</span>
-            <h5 class="card-title">Eviation Cyber Platform</h5>
+            <h3 class="h5 card-title">Eviation Cyber Platform</h3>
             <p class="card-text">
-              Capstone project - built the honeypot deception engine: Data Bomb (100GB backpressure streams via Node.js), Tarpit (async attacker delays), and dynamic decoy dashboards with Faker.js honey tokens and sandboxed XSS logging.
+              Team capstone security platform graded <strong>100</strong>, with an admin dashboard, API gateway and
+              real-time telemetry. I built the deception engine layer, honeypots, tarpits and dynamic decoy dashboards,
+              generating attacker-interaction intelligence and early-warning signals.
             </p>
-            <a class="btn btn-outline-primary mt-auto" href="https://github.com/yanivbahalul/Evation-cyber-platform" target="_blank" rel="noopener">View Project</a>
+            <a class="btn btn-outline-primary mt-auto" href="https://github.com/yanivbahalul/Evation-cyber-platform" target="_blank" rel="noopener">
+              <i class="bi bi-github me-1" aria-hidden="true"></i>View Project
+            </a>
           </div>
         </div>
       </div>
 
       <!-- Vinyl Album Identification -->
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm">
-          <img src="assets/proj_genai.svg" class="card-img-top project-card-image" alt="Vinyl Album Identification – Computer Vision">
+        <div class="card h-100">
+          <img src="assets/proj_genai.svg" width="800" height="400" class="card-img-top project-card-image" alt="" loading="lazy" decoding="async">
           <div class="card-body d-flex flex-column">
             <span class="proj-tag tag-cv mb-2">Computer Vision</span>
-            <h5 class="card-title">Vinyl Album Identification</h5>
+            <h3 class="h5 card-title">Vinyl Album Identification</h3>
             <p class="card-text">
-              Matches low-quality CCTV footage of vinyl albums to catalog images using ResNet50 and a Siamese network with Triplet Margin Loss. Generated 5,000 synthetic training samples via GLIGEN, achieving 77% Top-1 accuracy.
+              Matches low-quality CCTV footage of vinyl albums to catalog images using ResNet50 and a Siamese
+              network with Triplet Margin Loss. Augmented training with GLIGEN-generated synthetic images,
+              reaching 77% Top-1 accuracy.
             </p>
-            <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/GenAiProject" target="_blank" rel="noopener">View Project</a>
+            <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/GenAiProject" target="_blank" rel="noopener">
+              <i class="bi bi-github me-1" aria-hidden="true"></i>View Project
+            </a>
           </div>
         </div>
       </div>
 
       <!-- Wine Classification -->
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm">
-          <img src="assets/proj2.png" class="card-img-top project-card-image" alt="Wine Classification ML">
+        <div class="card h-100">
+          <img src="assets/proj2.webp" width="800" height="400" class="card-img-top project-card-image" alt="" loading="lazy" decoding="async">
           <div class="card-body d-flex flex-column">
             <span class="proj-tag tag-ml mb-2">Machine Learning</span>
-            <h5 class="card-title">Wine Classification – Random Forest</h5>
+            <h3 class="h5 card-title">Wine Classification</h3>
             <p class="card-text">
-              Supervised ML pipeline classifying wine types by chemical properties. Random Forest model achieves high accuracy and F1 score, with full EDA and feature importance analysis.
+              Supervised machine-learning pipeline classifying wine types by chemical properties with a Random
+              Forest model, including full exploratory analysis and feature-importance evaluation.
             </p>
-            <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/supervised_learning_flow-wine" target="_blank" rel="noopener">View Project</a>
+            <a class="btn btn-outline-primary mt-auto" href="https://github.com/BarDev1999/supervised_learning_flow-wine" target="_blank" rel="noopener">
+              <i class="bi bi-github me-1" aria-hidden="true"></i>View Project
+            </a>
           </div>
         </div>
       </div>
@@ -247,23 +448,22 @@
   </div>
 </section>
 
-<!-- SEED LABS -->
-<section id="seed-labs" class="py-5 bg-white">
+<!-- SEED LABS / SECURITY WRITE-UPS -->
+<section id="seed-labs" class="bg-white" aria-labelledby="seed-h">
   <div class="container">
-
+    <p class="section-label font-mono">05 / Security Write-ups</p>
     <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
-      <h2 class="mb-0">SEED Labs</h2>
-      <span class="seed-all-badge"><i class="bi bi-check-all me-1"></i>All Labs Completed · Above Requirements</span>
+      <h2 id="seed-h" class="mb-0">SEED Labs</h2>
+      <span class="seed-all-badge"><i class="bi bi-check-all me-1" aria-hidden="true"></i>6 / 6 labs completed &amp; documented</span>
     </div>
-    <p class="text-muted mb-2" style="max-width:720px;">
-      Hands-on network security research labs from the <strong>SEED (Security Education)</strong> curriculum,
-      completed as a 3-person team with <strong>Shalev Cohen</strong> and <strong>Noam Hadad</strong>.
-      Every lab was documented in depth with screenshots and full technical analysis.
-      All optional extensions and beyond-requirements challenges were completed successfully.
+    <p class="text-body-secondary mb-2" style="max-width:720px;">
+      Hands-on network and system security labs from the <strong>SEED (Security Education)</strong> curriculum
+      (Syracuse University), completed as a 3-person team in isolated VM environments. Every lab is documented
+      in depth with screenshots and full technical analysis, including beyond-requirements extensions.
     </p>
     <p class="mb-4">
       <a href="https://github.com/BarDev1999/seed-labs" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary">
-        <i class="bi bi-github me-1"></i>View All Labs on GitHub
+        <i class="bi bi-github me-1" aria-hidden="true"></i>View All Labs on GitHub
       </a>
     </p>
 
@@ -271,36 +471,34 @@
 
       <!-- Lab 0 -->
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm seed-lab-card">
+        <div class="card h-100 seed-lab-card">
           <div class="seed-lab-header lab-sniff">
             <div class="d-flex justify-content-between align-items-center">
-              <span class="seed-lab-num"><i class="bi bi-wifi me-1"></i>Lab 0</span>
-              <i class="bi bi-check-circle-fill seed-done-icon"></i>
+              <span class="seed-lab-num"><i class="bi bi-wifi me-1" aria-hidden="true"></i>Lab 0</span>
+              <i class="bi bi-check-circle-fill seed-done-icon" aria-hidden="true"></i>
             </div>
-            <h5 class="seed-lab-title">Packet Sniffing &amp; Spoofing</h5>
+            <h3 class="h5 seed-lab-title">Packet Sniffing &amp; Spoofing</h3>
           </div>
           <div class="card-body d-flex flex-column">
             <p class="card-text small">
               Dual implementation in Python/Scapy and C/libpcap: packet capture, BPF filtering,
-              IP spoofing, and live traffic manipulation at both high-level API and raw kernel level.
+              IP spoofing and live traffic manipulation at both high-level API and raw kernel level.
             </p>
             <ul class="seed-achievements">
               <li>Packet sniffing with BPF filters (ICMP, TCP port 23, subnet CIDR) in Python and C</li>
               <li>ICMP and UDP spoofing with forged source IPs via Raw Sockets</li>
               <li>Custom Traceroute built from scratch using incremental TTL</li>
-              <li>Combined Sniff-and-Spoof: live ICMP Echo Reply injection on LAN</li>
-              <li>Telnet credential capture via C/pcap payload pointer arithmetic</li>
-              <li><span class="seed-beyond">Beyond</span> Full C pipeline (pcap + Raw Sockets), Promiscuous mode analysis, Reverse Path Filtering deep dive</li>
+              <li>Combined sniff-and-spoof: live ICMP Echo Reply injection on LAN</li>
+              <li><span class="seed-beyond">Beyond</span> Full C pipeline (pcap + Raw Sockets), promiscuous-mode and Reverse Path Filtering analysis</li>
             </ul>
             <div class="tags mt-3">
-              <span class="badge sec">Scapy</span>
-              <span class="badge c">C / libpcap</span>
-              <span class="badge sec">Wireshark</span>
-              <span class="badge bash">Raw Sockets</span>
-              <span class="badge linux">Python</span>
+              <span class="badge-chip">Scapy</span>
+              <span class="badge-chip">C / libpcap</span>
+              <span class="badge-chip">Wireshark</span>
+              <span class="badge-chip">Raw Sockets</span>
             </div>
             <a href="https://github.com/BarDev1999/seed-labs/tree/main/lab-0" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm mt-auto pt-2">
-              <i class="bi bi-github me-1"></i>View Lab + Screenshots
+              <i class="bi bi-github me-1" aria-hidden="true"></i>Full write-up
             </a>
           </div>
         </div>
@@ -308,13 +506,13 @@
 
       <!-- Lab 1 -->
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm seed-lab-card">
+        <div class="card h-100 seed-lab-card">
           <div class="seed-lab-header lab-arp">
             <div class="d-flex justify-content-between align-items-center">
-              <span class="seed-lab-num"><i class="bi bi-diagram-3 me-1"></i>Lab 1</span>
-              <i class="bi bi-check-circle-fill seed-done-icon"></i>
+              <span class="seed-lab-num"><i class="bi bi-diagram-3 me-1" aria-hidden="true"></i>Lab 1</span>
+              <i class="bi bi-check-circle-fill seed-done-icon" aria-hidden="true"></i>
             </div>
-            <h5 class="seed-lab-title">ARP Cache Poisoning</h5>
+            <h3 class="h5 seed-lab-title">ARP Cache Poisoning</h3>
           </div>
           <div class="card-body d-flex flex-column">
             <p class="card-text small">
@@ -324,19 +522,17 @@
             <ul class="seed-achievements">
               <li>3 poisoning vectors: ARP Request (op=1), Reply (op=2), Gratuitous broadcast</li>
               <li>Two-way continuous MITM: both victims simultaneously redirected to attacker</li>
-              <li>Telnet MITM: real-time replacement of all alphabetic chars with Z</li>
-              <li>Netcat MITM: surgical "Adrian" to "AAAAAA" with exact TCP payload length preservation</li>
-              <li>Continuous re-poisoning loop to defeat ARP cache expiry</li>
-              <li><span class="seed-beyond">Beyond</span> Tested arpspoof + ettercap for one-command MITM; documented DAI (Dynamic ARP Inspection) defenses</li>
+              <li>Telnet MITM: real-time replacement of alphabetic characters</li>
+              <li>Netcat MITM with exact TCP payload-length preservation</li>
+              <li><span class="seed-beyond">Beyond</span> arpspoof + ettercap one-command MITM; documented Dynamic ARP Inspection defenses</li>
             </ul>
             <div class="tags mt-3">
-              <span class="badge sec">Scapy</span>
-              <span class="badge sec">ARP / ICMP</span>
-              <span class="badge linux">Python</span>
-              <span class="badge sec">Wireshark</span>
+              <span class="badge-chip">Scapy</span>
+              <span class="badge-chip">ARP / ICMP</span>
+              <span class="badge-chip">Wireshark</span>
             </div>
             <a href="https://github.com/BarDev1999/seed-labs/tree/main/lab-1" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm mt-auto pt-2">
-              <i class="bi bi-github me-1"></i>View Lab + Screenshots
+              <i class="bi bi-github me-1" aria-hidden="true"></i>Full write-up
             </a>
           </div>
         </div>
@@ -344,35 +540,33 @@
 
       <!-- Lab 2 -->
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm seed-lab-card">
+        <div class="card h-100 seed-lab-card">
           <div class="seed-lab-header lab-ip">
             <div class="d-flex justify-content-between align-items-center">
-              <span class="seed-lab-num"><i class="bi bi-layers me-1"></i>Lab 2</span>
-              <i class="bi bi-check-circle-fill seed-done-icon"></i>
+              <span class="seed-lab-num"><i class="bi bi-layers me-1" aria-hidden="true"></i>Lab 2</span>
+              <i class="bi bi-check-circle-fill seed-done-icon" aria-hidden="true"></i>
             </div>
-            <h5 class="seed-lab-title">IP / ICMP Attacks</h5>
+            <h3 class="h5 seed-lab-title">IP / ICMP Attacks</h3>
           </div>
           <div class="card-body d-flex flex-column">
             <p class="card-text small">
               Advanced IP-layer attacks: fragmentation abuse, ICMP control-plane hijacking,
-              kernel-memory DoS, and multi-subnet routing manipulation.
+              kernel-memory DoS and multi-subnet routing manipulation.
             </p>
             <ul class="seed-achievements">
-              <li>IP fragmentation with precise Offset/Flags math; overlapping fragment exploit (Teardrop variant)</li>
-              <li>Ping of Death: crafted 65,535+ byte payload split across two fragments</li>
-              <li>Fragment Flood DoS in Python/Scapy and C/Raw Sockets: 75% packet loss confirmed</li>
-              <li>ICMP Redirect attack: hijacked victim routing cache to reroute external traffic</li>
-              <li>Manual multi-subnet router: ifconfig, ip route, IP Forwarding via sysctl</li>
-              <li><span class="seed-beyond">Beyond</span> Strict vs Loose RPF bypass, IP-in-IP encapsulation to evade RPF, 5-terminal parallel C DoS</li>
+              <li>IP fragmentation with precise Offset/Flags math; overlapping fragment exploit</li>
+              <li>Ping of Death: crafted 65,535+ byte payload split across fragments</li>
+              <li>Fragment Flood DoS in Python/Scapy and C/Raw Sockets</li>
+              <li>ICMP Redirect: hijacked victim routing cache to reroute traffic</li>
+              <li><span class="seed-beyond">Beyond</span> Strict vs Loose RPF bypass, IP-in-IP encapsulation, parallel C DoS</li>
             </ul>
             <div class="tags mt-3">
-              <span class="badge c">C / Raw Sockets</span>
-              <span class="badge sec">Scapy</span>
-              <span class="badge sec">ICMP / IP</span>
-              <span class="badge linux">Python</span>
+              <span class="badge-chip">C / Raw Sockets</span>
+              <span class="badge-chip">Scapy</span>
+              <span class="badge-chip">ICMP / IP</span>
             </div>
             <a href="https://github.com/BarDev1999/seed-labs/tree/main/lab-2" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm mt-auto pt-2">
-              <i class="bi bi-github me-1"></i>View Lab + Screenshots
+              <i class="bi bi-github me-1" aria-hidden="true"></i>Full write-up
             </a>
           </div>
         </div>
@@ -380,35 +574,33 @@
 
       <!-- Lab 3 -->
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm seed-lab-card">
+        <div class="card h-100 seed-lab-card">
           <div class="seed-lab-header lab-dns">
             <div class="d-flex justify-content-between align-items-center">
-              <span class="seed-lab-num"><i class="bi bi-server me-1"></i>Lab 3</span>
-              <i class="bi bi-check-circle-fill seed-done-icon"></i>
+              <span class="seed-lab-num"><i class="bi bi-server me-1" aria-hidden="true"></i>Lab 3</span>
+              <i class="bi bi-check-circle-fill seed-done-icon" aria-hidden="true"></i>
             </div>
-            <h5 class="seed-lab-title">Local DNS Attacks</h5>
+            <h3 class="h5 seed-lab-title">Local DNS Attacks</h3>
           </div>
           <div class="card-body d-flex flex-column">
             <p class="card-text small">
               End-to-end DNS attack surface from hosts-file hijacking to multi-section cache poisoning,
-              including Bailiwick Rule bypass research and AAAA race condition exploitation.
+              including Bailiwick Rule bypass research and AAAA race-condition exploitation.
             </p>
             <ul class="seed-achievements">
               <li>BIND9 setup: recursive resolver + authoritative zone for example.com</li>
-              <li>Hosts file poisoning: redirected www.bank32.com to attacker IP (phishing simulation)</li>
-              <li>Direct DNS spoofing: sniff query then inject reply before real server responds</li>
-              <li>DNS Cache Poisoning: poisoned resolver with 259,000s TTL forged A record</li>
-              <li>Authority Section poisoning and Bailiwick Rule bypass (Piggybacking + Decoupled)</li>
-              <li><span class="seed-beyond">Beyond</span> Additional Section attacks, AAAA/IPv6 race condition exploit, DNSSEC configuration theory</li>
+              <li>Hosts-file poisoning: redirected www.bank32.com to attacker IP</li>
+              <li>Direct DNS spoofing: sniff query then inject reply before real server</li>
+              <li>Cache poisoning with forged A record and Authority-section injection</li>
+              <li><span class="seed-beyond">Beyond</span> Additional-section attacks, AAAA/IPv6 race condition, DNSSEC theory</li>
             </ul>
             <div class="tags mt-3">
-              <span class="badge sec">BIND9 / DNS</span>
-              <span class="badge sec">Scapy</span>
-              <span class="badge linux">Python</span>
-              <span class="badge sec">dig / Wireshark</span>
+              <span class="badge-chip">BIND9 / DNS</span>
+              <span class="badge-chip">Scapy</span>
+              <span class="badge-chip">dig / Wireshark</span>
             </div>
             <a href="https://github.com/BarDev1999/seed-labs/tree/main/lab-3" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm mt-auto pt-2">
-              <i class="bi bi-github me-1"></i>View Lab + Screenshots
+              <i class="bi bi-github me-1" aria-hidden="true"></i>Full write-up
             </a>
           </div>
         </div>
@@ -416,34 +608,33 @@
 
       <!-- Lab 4 -->
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm seed-lab-card">
+        <div class="card h-100 seed-lab-card">
           <div class="seed-lab-header lab-dns-r">
             <div class="d-flex justify-content-between align-items-center">
-              <span class="seed-lab-num"><i class="bi bi-globe me-1"></i>Lab 4</span>
-              <i class="bi bi-check-circle-fill seed-done-icon"></i>
+              <span class="seed-lab-num"><i class="bi bi-globe me-1" aria-hidden="true"></i>Lab 4</span>
+              <i class="bi bi-check-circle-fill seed-done-icon" aria-hidden="true"></i>
             </div>
-            <h5 class="seed-lab-title">Remote DNS Cache Poisoning</h5>
+            <h3 class="h5 seed-lab-title">Remote DNS Cache Poisoning</h3>
           </div>
           <div class="card-body d-flex flex-column">
             <p class="card-text small">
               The Kaminsky Attack: remote DNS cache poisoning without LAN access, exploiting
-              16-bit Transaction ID entropy and source port predictability in unpatched resolvers.
+              16-bit Transaction ID entropy and source-port predictability in unpatched resolvers.
             </p>
             <ul class="seed-achievements">
               <li>Kaminsky Attack: flood resolver with spoofed replies for random subdomains until ID matches</li>
-              <li>Source port randomization analysis: fixed port reduces entropy from 32-bit to 16-bit</li>
-              <li>Custom attacker DNS server (adrian.com) poisoned as NS for example.com</li>
+              <li>Source-port randomization analysis: fixed port reduces entropy to 16 bits</li>
+              <li>Custom attacker DNS server poisoned as NS for example.com</li>
               <li>Full remote resolver cache poisoning without LAN access</li>
-              <li><span class="seed-beyond">Beyond</span> DNSSEC implementation to defeat the attack; 2008 Kaminsky coordinated disclosure case study</li>
+              <li><span class="seed-beyond">Beyond</span> DNSSEC implementation to defeat the attack; 2008 disclosure case study</li>
             </ul>
             <div class="tags mt-3">
-              <span class="badge sec">Kaminsky Attack</span>
-              <span class="badge sec">BIND9</span>
-              <span class="badge linux">Python</span>
-              <span class="badge sec">DNS / UDP</span>
+              <span class="badge-chip accent">Kaminsky Attack</span>
+              <span class="badge-chip">BIND9</span>
+              <span class="badge-chip">DNS / UDP</span>
             </div>
             <a href="https://github.com/BarDev1999/seed-labs/tree/main/lab-4" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm mt-auto pt-2">
-              <i class="bi bi-github me-1"></i>View Lab + Screenshots
+              <i class="bi bi-github me-1" aria-hidden="true"></i>Full write-up
             </a>
           </div>
         </div>
@@ -451,34 +642,34 @@
 
       <!-- Lab 5 -->
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm seed-lab-card">
+        <div class="card h-100 seed-lab-card">
           <div class="seed-lab-header lab-rsa">
             <div class="d-flex justify-content-between align-items-center">
-              <span class="seed-lab-num"><i class="bi bi-key-fill me-1"></i>Lab 5</span>
-              <i class="bi bi-check-circle-fill seed-done-icon"></i>
+              <span class="seed-lab-num"><i class="bi bi-key-fill me-1" aria-hidden="true"></i>Lab 5</span>
+              <i class="bi bi-check-circle-fill seed-done-icon" aria-hidden="true"></i>
             </div>
-            <h5 class="seed-lab-title">RSA Public Key Encryption &amp; Signatures</h5>
+            <h3 class="h5 seed-lab-title">RSA Public-Key Encryption &amp; Signatures</h3>
           </div>
           <div class="card-body d-flex flex-column">
             <p class="card-text small">
-              RSA built from scratch with the OpenSSL BIGNUM API: private key derivation, encryption,
-              decryption, digital signatures, and end to end manual verification of a live X.509 certificate.
+              RSA built from scratch with the OpenSSL BIGNUM API: private-key derivation, encryption,
+              decryption, digital signatures and manual verification of a live X.509 certificate.
             </p>
             <ul class="seed-achievements">
               <li>Derived private key <code>d</code> from <code>(p, q, e)</code> via <code>BN_mod_inverse</code></li>
-              <li>Encrypt and decrypt round trip recovering <em>"Password is dees"</em></li>
-              <li>Signature avalanche demo: a single digit change produces a fully decorrelated signature</li>
-              <li>Manually verified the live X.509 certificate of <strong>www.reddit.com</strong> end to end (extract CA modulus, recover hash, byte compare SHA-256)</li>
-              <li><span class="seed-beyond">Beyond</span> Factoring Attack via FactorDB: recovered <code>d</code> from <code>(n, e)</code> alone on a 256-bit modulus in seconds</li>
+              <li>Encrypt and decrypt round trip</li>
+              <li>Signature avalanche demo: a single digit change fully decorrelates the signature</li>
+              <li>Manually verified a live X.509 certificate end to end (CA modulus to SHA-256 compare)</li>
+              <li><span class="seed-beyond">Beyond</span> Factoring attack via FactorDB: recovered <code>d</code> from <code>(n, e)</code> on a 256-bit modulus</li>
             </ul>
             <div class="tags mt-3">
-              <span class="badge sec">RSA</span>
-              <span class="badge sec">X.509 / PKI</span>
-              <span class="badge linux">C / OpenSSL</span>
-              <span class="badge sec">SHA-256</span>
+              <span class="badge-chip">RSA</span>
+              <span class="badge-chip">X.509 / PKI</span>
+              <span class="badge-chip">C / OpenSSL</span>
+              <span class="badge-chip">SHA-256</span>
             </div>
             <a href="https://github.com/BarDev1999/seed-labs/tree/main/lab-5" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm mt-auto pt-2">
-              <i class="bi bi-github me-1"></i>View Lab + Screenshots
+              <i class="bi bi-github me-1" aria-hidden="true"></i>Full write-up
             </a>
           </div>
         </div>
@@ -489,48 +680,61 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="py-5 bg-alt">
+<section id="contact" class="bg-alt" aria-labelledby="contact-h">
   <div class="container">
-    <h2 class="mb-4">Get In Touch</h2>
+    <p class="section-label font-mono">06 / Contact</p>
+    <h2 id="contact-h" class="mb-4">Get In Touch</h2>
     <div class="row g-4">
       <div class="col-lg-8">
         <form action="https://formspree.io/f/mgvlwlao" method="POST" class="needs-validation" novalidate>
           <div class="mb-3">
-            <label class="form-label">Name</label>
-            <input type="text" name="name" class="form-control" required>
+            <label class="form-label" for="contact-name">Name</label>
+            <input type="text" name="name" id="contact-name" class="form-control" required autocomplete="name">
+            <div class="invalid-feedback">Please enter your name.</div>
           </div>
           <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" required>
+            <label class="form-label" for="contact-email">Email</label>
+            <input type="email" name="email" id="contact-email" class="form-control" required autocomplete="email" inputmode="email">
+            <div class="invalid-feedback">Please enter a valid email address.</div>
           </div>
           <div class="mb-3">
-            <label class="form-label">Message</label>
-            <textarea name="message" class="form-control" rows="4" required></textarea>
+            <label class="form-label" for="contact-message">Message</label>
+            <textarea name="message" id="contact-message" class="form-control" rows="4" required></textarea>
+            <div class="invalid-feedback">Please enter a message.</div>
           </div>
-          <input type="hidden" name="_captcha" value="false">
-          <button class="btn btn-primary">Send</button>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+          <input type="hidden" name="_subject" value="Portfolio contact from bardev1999.github.io">
+          <button type="submit" class="btn btn-primary">Send</button>
         </form>
       </div>
       <div class="col-lg-4">
-        <ul class="list-unstyled">
-          <li class="mb-2"><i class="bi bi-envelope"></i> barsgh@gmail.com</li>
-          <li class="mb-2"><i class="bi bi-telephone"></i> +972-54-984-9203</li>
-          <li class="mb-2"><i class="bi bi-geo-alt"></i> Central District, Israel</li>
+        <ul class="list-unstyled contact-list">
+          <li class="mb-2"><i class="bi bi-envelope me-2" aria-hidden="true"></i><a href="mailto:barsgh@gmail.com">barsgh@gmail.com</a></li>
+          <li class="mb-2"><i class="bi bi-geo-alt me-2" aria-hidden="true"></i>Central District, Israel</li>
         </ul>
-        <div class="d-flex gap-3 fs-3">
-          <a href="https://www.linkedin.com/in/bar-sberro/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="https://github.com/BarDev1999" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <div class="d-flex gap-3 fs-3 mt-3">
+          <a href="https://www.linkedin.com/in/bar-sberro/" target="_blank" rel="me noopener" aria-label="LinkedIn profile"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+          <a href="https://github.com/BarDev1999" target="_blank" rel="me noopener" aria-label="GitHub profile"><i class="bi bi-github" aria-hidden="true"></i></a>
+          <a href="mailto:barsgh@gmail.com" aria-label="Email Bar"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<footer class="py-4 bg-white border-top">
-  <div class="container text-center small">© Bar Sberro. All rights reserved.</div>
+</main>
+
+<footer class="border-top">
+  <div class="container">
+    <p class="footer-note small mb-1">
+      All offensive techniques shown on this site were performed in isolated lab environments I own, for education and research.
+    </p>
+    <p class="small mb-0 text-body-secondary">&copy; <span id="year"></span> Bar Sberro. All rights reserved.</p>
+  </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+<script src="script.js?v=2" defer></script>
 </body>
 </html>
