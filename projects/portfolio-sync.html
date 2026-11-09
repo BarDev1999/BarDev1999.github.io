@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-Broker Portfolio Data Sync | Bar Sberro</title>
+  <meta name="description" content="A twice-daily ETL that merges two brokers into one SQL ledger, then measures returns, risk and past decisions. Case study by Bar Sberro.">
+  <link rel="canonical" href="https://bardev1999.github.io/projects/portfolio-sync.html">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bardev1999.github.io/projects/portfolio-sync.html">
+  <meta property="og:title" content="Multi-Broker Portfolio Data Sync | Bar Sberro">
+  <meta property="og:description" content="A twice-daily ETL that merges two brokers into one SQL ledger, then measures returns, risk and past decisions. Case study by Bar Sberro.">
+  <meta property="og:image" content="https://bardev1999.github.io/assets/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-bs-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"
+        integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+  <link href="../styles.css?v=8" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav class="navbar navbar-expand-lg shadow-sm fixed-top" aria-label="Primary">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="../index.html">Bar Sberro</a>
+    <div class="nav-actions order-lg-2">
+      <div class="dropdown cv-menu">
+        <a class="btn btn-primary btn-sm dropdown-toggle" href="../assets/Bar-Sberro-CV.pdf" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download me-1" aria-hidden="true"></i>CV</a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="../assets/Bar-Sberro-CV.pdf" download="Bar_Sberro_Security_Research_CV.pdf">Security research and red team<small>My main CV</small></a></li>
+          <li><a class="dropdown-item" href="../assets/Bar-Sberro-CV-AI-Security.pdf" download="Bar_Sberro_AI_Security_Research_CV.pdf">AI security and AI red team<small>For roles focused on securing AI</small></a></li>
+        </ul>
+      </div>
+      <button id="theme-toggle" class="btn btn-sm btn-outline-secondary theme-toggle" type="button" aria-label="Switch color theme">
+        <i class="bi bi-moon-stars" aria-hidden="true"></i>
+      </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div id="nav" class="collapse navbar-collapse order-lg-1">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="../index.html#find">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#systems">Systems</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="case-hero bg-alt">
+  <div class="container">
+    <nav class="case-switch" aria-label="Case studies">
+      <a href="../index.html#systems"><i class="bi bi-arrow-left" aria-hidden="true"></i>All systems</a><a href="portfolio-sync.html" aria-current="page">Portfolio Sync</a><a href="market-scanner.html">Market Scanner</a><a href="video-pipeline.html">Video Pipeline</a>
+    </nav>
+    <p class="section-label font-mono">Independent project / Data engineering</p>
+    <h1 class="fw-bold">Multi-Broker Portfolio Data Sync</h1>
+    <div class="plain-box"><b>In plain words</b><p>Two brokers, two formats and no single view. This app pulls everything into one place twice a day and shows how the investments are really doing compared to the market. It can only read data, it cannot buy or sell.</p></div>
+    <div class="case-meta"><span class="badge-chip accent"><i class="bi bi-lock me-1" aria-hidden="true"></i>Private repository</span><span class="badge-chip"><i class="bi bi-person me-1" aria-hidden="true"></i>Solo project</span><span class="badge-chip"><i class="bi bi-calendar3 me-1" aria-hidden="true"></i>May 2026 to present</span><span class="badge-chip"><i class="bi bi-arrow-repeat me-1" aria-hidden="true"></i>In regular use</span></div>
+    <div class="edu-stats row g-3">
+<div class="col-6 col-md-3"><div class="stat"><span class="stat-num">2</span><span class="stat-label">brokers merged into one ledger</span></div></div>
+<div class="col-6 col-md-3"><div class="stat"><span class="stat-num">2x</span><span class="stat-label">scheduled syncs a day</span></div></div>
+<div class="col-6 col-md-3"><div class="stat"><span class="stat-num">29K</span><span class="stat-label">lines of Python, tests included</span></div></div>
+<div class="col-6 col-md-3"><div class="stat"><span class="stat-num">20</span><span class="stat-label">test scripts</span></div></div>
+    </div>
+  </div>
+</header>
+
+<section class="case-section bg-white" aria-labelledby="see-h">
+  <div class="container">
+    <div class="row g-3 mb-4">
+      <div class="col-md-4"><div class="note-card"><i class="bi bi-gear" aria-hidden="true"></i><h3>What it does</h3><p>Collects trades from two brokers automatically and combines them into one clean record.</p></div></div>
+      <div class="col-md-4"><div class="note-card"><i class="bi bi-lightbulb" aria-hidden="true"></i><h3>Why it matters</h3><p>Broker statements cannot tell you whether you are actually beating the market, or where your results came from.</p></div></div>
+      <div class="col-md-4"><div class="note-card"><i class="bi bi-person-check" aria-hidden="true"></i><h3>What it shows about me</h3><p>Building reliable data pipelines, checking numbers against known answers, and making the system read only by design.</p></div></div>
+    </div>
+    <h2 id="see-h" class="h3">Why deposits must not count as returns</h2>
+    <p class="case-intro">This is the core accounting problem in one picture. The balance jumps when money is added, but the investments did not earn that jump. A flow-neutral index removes the deposit so the return can be compared with a benchmark.</p>
+    <div class="preview">
+  <div class="preview-bar"><span>Concept view</span><span class="demo-label"><i class="bi bi-info-circle" aria-hidden="true"></i>Invented numbers, not account data</span></div>
+  <div class="preview-body">
+    <div class="chart-legend"><span><i style="background:var(--chart-2)"></i>Account balance</span><span><i style="background:var(--chart-1)"></i>Flow-neutral return index</span></div>
+    <div class="chart-host" data-flow-chart data-points='[{"m":0,"b":100.0,"t":100.0},{"m":1,"b":102.0,"t":102.0},{"m":2,"b":101.0,"t":101.0},{"m":3,"b":104.0,"t":104.0},{"m":4,"b":105.6,"t":105.6},{"m":5,"b":103.5,"t":103.5},{"m":6,"b":106.0,"t":106.0},{"m":7,"b":107.1,"t":107.1},{"m":8,"b":105.5,"t":105.5},{"m":9,"b":108.7,"t":108.7},{"m":10,"b":110.8,"t":110.8},{"m":11,"b":109.7,"t":109.7},{"m":12,"b":171.4,"t":111.4},{"m":13,"b":174.8,"t":113.6},{"m":14,"b":169.6,"t":110.2},{"m":15,"b":171.3,"t":111.3},{"m":16,"b":175.5,"t":114.1},{"m":17,"b":173.8,"t":112.9},{"m":18,"b":177.3,"t":115.2},{"m":19,"b":179.9,"t":116.9},{"m":20,"b":176.3,"t":114.6},{"m":21,"b":181.6,"t":118.0},{"m":22,"b":183.4,"t":119.2},{"m":23,"b":187.1,"t":121.6},{"m":24,"b":185.2,"t":120.4}]' data-deposit="12"></div>
+    <details class="chart-table"><summary>Show the numbers as a table</summary>
+      <table><thead><tr><th>Month</th><th>Balance</th><th>Return index</th></tr></thead><tbody><tr><td>0</td><td>100.0</td><td>100.0</td></tr><tr><td>3</td><td>104.0</td><td>104.0</td></tr><tr><td>6</td><td>106.0</td><td>106.0</td></tr><tr><td>9</td><td>108.7</td><td>108.7</td></tr><tr><td>12</td><td>171.4</td><td>111.4</td></tr><tr><td>15</td><td>171.3</td><td>111.3</td></tr><tr><td>18</td><td>177.3</td><td>115.2</td></tr><tr><td>21</td><td>181.6</td><td>118.0</td></tr><tr><td>24</td><td>185.2</td><td>120.4</td></tr></tbody></table>
+    </details>
+  </div>
+</div>
+<h3 class="h6 skill-head mt-4">Views in the Strategy module</h3>
+<div class="tags"><span class="badge-chip">Overview</span><span class="badge-chip">Holdings</span><span class="badge-chip">Actions</span><span class="badge-chip">Scorecard</span><span class="badge-chip">Forensics</span><span class="badge-chip">Risk</span><span class="badge-chip">Market</span><span class="badge-chip">Radar</span><span class="badge-chip">Lab</span><span class="badge-chip">Data</span></div>
+  </div>
+</section>
+
+<section class="case-section bg-alt" aria-labelledby="how-h">
+  <div class="container">
+    <h2 id="how-h" class="h3">How it works</h2>
+    <p class="case-intro">Choose a stage to see what it does and the reasoning behind it.</p>
+    <div class="walk" data-walkthrough>
+  <div class="walk-tabs" role="tablist" aria-label="Pipeline stages">
+<button class="walk-tab" type="button" role="tab" id="tab-0" aria-controls="panel-0" aria-selected="true" tabindex="0">Ingest</button>
+<button class="walk-tab" type="button" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="false" tabindex="-1">Normalize</button>
+<button class="walk-tab" type="button" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Store</button>
+<button class="walk-tab" type="button" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">Analyze</button>
+<button class="walk-tab" type="button" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1">Deliver</button>
+  </div>
+  <div class="walk-panels">
+<div class="walk-panel" role="tabpanel" data-default id="panel-0" aria-labelledby="tab-0" tabindex="0">
+  <h3>Ingest</h3>
+  <p>A headless job runs every morning and evening. One broker is read through the IBKR Flex API with polling and backoff. The other has no public API, so a Playwright session reads the portal&#39;s internal JSON API.</p>
+  <div class="walk-why"><b>Why it is built this way</b>Broker reports are generated asynchronously and only once a day, so the sync has to wait, retry and tolerate a report that is not ready yet.</div>
+  <div class="tags"><span class="badge-chip">IBKR Flex API</span><span class="badge-chip">Playwright</span><span class="badge-chip">Task Scheduler</span></div>
+</div>
+<div class="walk-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0">
+  <h3>Normalize</h3>
+  <p>Each broker format is parsed into one trade model, with currency conversion, ticker mapping and stock splits. Row ids are deterministic, so a repeated sync cannot duplicate a trade.</p>
+  <div class="walk-why"><b>Why it is built this way</b>No broker feed reports splits, so they come from market history and each is applied exactly once. When a ticker mapping changes, stored rows are re-keyed rather than duplicated.</div>
+  <div class="tags"><span class="badge-chip">Pandas</span><span class="badge-chip">FX conversion</span><span class="badge-chip">Idempotent keys</span></div>
+</div>
+<div class="walk-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0">
+  <h3>Store</h3>
+  <p>Personal trades and public market prices live in two separate SQL databases. Total return indexes are computed locally from prices and dividends.</p>
+  <div class="walk-why"><b>Why it is built this way</b>The separation keeps the market store free of anything personal. Computing the index locally also makes results independent of the date range a data provider returns.</div>
+  <div class="tags"><span class="badge-chip">SQLAlchemy</span><span class="badge-chip">SQLite</span></div>
+</div>
+<div class="walk-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" tabindex="0">
+  <h3>Analyze</h3>
+  <p>Pure functions over DataFrames compute time-weighted returns, a scorecard against SPY and QQQ, risk including replays of past drawdowns, and a review of each decision. A lab tests written rules with costs and taxes.</p>
+  <div class="walk-why"><b>Why it is built this way</b>Keeping math out of the UI means every metric can be tested alone. A missing price stays unknown instead of becoming zero, which would silently distort every total.</div>
+  <div class="tags"><span class="badge-chip">Pandas</span><span class="badge-chip">NumPy</span><span class="badge-chip">Walk-forward tests</span></div>
+</div>
+<div class="walk-panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" tabindex="0">
+  <h3>Deliver</h3>
+  <p>A Streamlit app for deep work, plus a static phone page rebuilt after each sync and delivered through one pinned Telegram message.</p>
+  <div class="walk-why"><b>Why it is built this way</b>A script-free static page gives phone access without running an internet-facing service against financial data.</div>
+  <div class="tags"><span class="badge-chip">Streamlit</span><span class="badge-chip">Plotly</span><span class="badge-chip">Telegram Bot API</span></div>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="case-section bg-white" aria-labelledby="tech-h">
+  <div class="container">
+    <h2 id="tech-h" class="h3">Technical detail</h2>
+    <p class="case-intro">Optional reading for engineers and hiring managers.</p>
+    <div data-tabs>
+      <div class="tab-list" role="tablist" aria-label="Technical detail">
+        <button class="tab-btn" type="button" role="tab" id="t-sec" aria-controls="sec" aria-selected="true"><i class="bi bi-shield-lock" aria-hidden="true"></i>Security and privacy</button>
+        <button class="tab-btn" type="button" role="tab" id="t-dec" aria-controls="dec" aria-selected="false" tabindex="-1"><i class="bi bi-signpost-split" aria-hidden="true"></i>Engineering decisions</button>
+        <button class="tab-btn" type="button" role="tab" id="t-ver" aria-controls="ver" aria-selected="false" tabindex="-1"><i class="bi bi-check2-square" aria-hidden="true"></i>How I verified it</button>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="sec" aria-labelledby="t-sec" tabindex="0" data-default><ul class="check-list"><li>Every ticker rendered as raw HTML is escaped, because a crafted broker CSV could otherwise run script in the browser.</li><li>Uploads strip null bytes, reject traversal names, and verify the resolved path stays inside the upload directory.</li><li>Credentials live in the operating system credential store and an untracked local environment file, not in code.</li><li>No write path to any broker exists, which removes the most damaging failure mode entirely.</li></ul></div>
+      <div class="tab-panel" role="tabpanel" id="dec" aria-labelledby="t-dec" tabindex="0"><div class="row g-3">
+<div class="col-md-6"><div class="note-card"><i class="bi bi-layers" aria-hidden="true"></i><h3>Pure core, thin UI</h3><p>All math sits in plain functions and the interface only formats. The desktop app and the phone page call the same code in the same order.</p></div></div>
+<div class="col-md-6"><div class="note-card"><i class="bi bi-question-circle" aria-hidden="true"></i><h3>Unknown is not zero</h3><p>An unavailable price is None, never 0.0. Missing history returns NaN with a reason, so a data gap cannot look like a loss.</p></div></div>
+<div class="col-md-6"><div class="note-card"><i class="bi bi-journal-check" aria-hidden="true"></i><h3>The module keeps score of itself</h3><p>It logs what it computed each day and later reports whether its own flags preceded underperformance, so weak parts can be removed.</p></div></div>
+<div class="col-md-6"><div class="note-card"><i class="bi bi-shield-lock" aria-hidden="true"></i><h3>Read only by design</h3><p>The system measures and explains. It never calls a broker write API and never issues a buy or sell recommendation of its own.</p></div></div>
+      </div></div>
+      <div class="tab-panel" role="tabpanel" id="ver" aria-labelledby="t-ver" tabindex="0"><ul class="check-list"><li>Metrics are tested on synthetic ledgers with answers known in advance, then cross-checked against figures already proven. Real-data checks are a separate mode that I run myself.</li><li>Past decisions are compared with random picks drawn by permutation, after a closed form statistical test proved too generous.</li><li>The rule lab uses walk-forward testing with costs and taxes, and a deflated Sharpe ratio that accounts for how many variants were tried.</li><li>A UX audit timed the first click after the price cache expired, the case warm-cache timing misses: it went from 32.6 s to 5.2 s after the fix.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="case-section bg-alt" aria-labelledby="scope-h">
+  <div class="container">
+    <div class="honest-box mb-4">
+      <h3 id="scope-h">Scope, stated plainly</h3>
+      <p>This is personal decision support, not investment advice. All figures come from deterministic code, and no LLM calculates any metric. I built it with Claude Code as my coding agent: I defined the requirements and acceptance criteria, reviewed the results and decided what shipped.</p>
+    </div>
+    <div class="case-next align-items-center">
+      <a class="btn btn-primary" href="../index.html#contact"><i class="bi bi-chat-dots me-1" aria-hidden="true"></i>Request a code walkthrough</a>
+      <a class="btn btn-outline-primary" href="market-scanner.html">Next: Market Scanner<i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-top">
+  <div class="container">
+    <p class="footer-note small mb-1">Demo data on this page is invented. Nothing here is investment advice.</p>
+    <p class="small mb-0 text-body-secondary">&copy; <span id="year"></span> Bar Sberro. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+<script src="../script.js?v=3" defer></script>
+<script src="case.js?v=2" defer></script>
+</body>
+</html>
